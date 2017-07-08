@@ -1,0 +1,702 @@
+﻿>SCHEMA template
+>PATCH 27
+>TABLE 
+T_Cartao
+0
+#DESC 
+dsfsdfdsfsdfsdffffffffffffffff ewfjfhe asjdfajsd asj,dajsdas dasjdnjas dasjdjasdas dajsdhjaskd asjdhassd asjkdas,das dnjasj,das,d sdskdjjkashdaksjhdjkashdjkasb daksjdhas das,djas ssx33443dd
+#TABLEMAP 51
+st_empresa,False,6,alphanumeric,False,
+st_matricula,False,6,alphanumeric,False,
+st_titularidade,False,2,alphanumeric,False,
+st_senha,False,16,alphanumeric,False,
+st_senhaw,False,40,alphanumeric,True,
+tg_tipoCartao,False,1,alphanumeric,False,
+tg_viaCartao,False,1,alphanumeric,True,
+st_venctoCartao,False,4,alphanumeric,False,
+st_cpf,False,14,alphanumeric,True,
+nu_limiteTotal,False,,integer,True,
+nu_limiteMensal,False,,integer,True,
+nu_limiteRotativo,False,,integer,True,
+nu_extraCota,False,,integer,True,
+tg_status,False,1,alphanumeric,False,
+dt_utlPagto,False,,datetime,False,
+nu_diaVencto,False,,integer,True,
+nu_diaFechFatura,False,,integer,True,
+tg_testeProducao,False,1,alphanumeric,True,
+nu_senhaErrada,False,,integer,False,
+dt_inclusao,False,,datetime,False,
+dt_bloqueio,False,,datetime,False,
+tg_motivoBloqueio,False,1,alphanumeric,False,
+st_banco,False,4,alphanumeric,False,
+st_agencia,False,4,alphanumeric,False,
+st_conta,False,10,alphanumeric,False,
+tg_gerencial,False,1,alphanumeric,True,
+st_matriculaExtra,False,10,alphanumeric,False,
+st_celCartao,False,13,alphanumeric,False,
+nu_pontos,False,,integer,True,
+fk_dadosProprietario,False,,integer,False,
+fk_infoAdicionais,False,,integer,False,
+nu_viaCartao,False,,integer,False,
+vr_limiteTotal,False,,integer,False,
+vr_limiteMensal,False,,integer,False,
+vr_limiteRotativo,False,,integer,False,
+vr_extraCota,False,,integer,False,
+vr_educacional,False,,integer,False,
+vr_disp_educacional,False,,integer,False,
+vr_edu_extra,False,,integer,True,
+vr_disp_edu_extra,False,,integer,True,
+vr_edu_diario,False,,integer,False,
+st_aluno,False,40,alphanumeric,False,
+st_senhaEdu,False,16,alphanumeric,True,
+tg_bloqueio,False,,integer,True,
+tg_emitido,False,,integer,False,
+vr_edu_disp_virtual,False,,integer,False,
+nu_rankVirtual,False,,integer,False,
+vr_edu_total_ranking,False,,integer,False,
+nu_webSenhaErrada,False,,integer,False,
+tg_semanaCompleta,False,,integer,False,(1) sete dias por semana
+tg_excluido,False,,integer,False,
+>TABLE 
+T_InfoAdicionais
+0
+#DESC 
+
+#TABLEMAP 17
+fk_cartao,False,,integer,True,
+st_codigo,False,6,alphanumeric,False,
+st_empresaAfiliada,False,30,alphanumeric,False,
+fk_comoSoube,False,,integer,True,
+fk_timeRS,False,,integer,True,
+st_presenteado,False,50,alphanumeric,False,
+st_recado,False,80,alphanumeric,False,
+st_edu_cod_aluno,False,20,alphanumeric,True,
+dt_edu_nasc,False,,datetime,False,
+st_edu_sexo,False,1,alphanumeric,False,
+st_edu_grau,False,1,alphanumeric,False,
+st_edu_serie_semestre,False,2,alphanumeric,False,
+st_edu_turma,False,10,alphanumeric,False,
+st_edu_curso,False,30,alphanumeric,False,
+dt_edu_atualizacao,False,,datetime,False,
+st_empresa,False,6,alphanumeric,False,
+st_matricula,False,6,alphanumeric,False,
+>TABLE 
+T_Proprietario
+0
+#DESC 
+
+#TABLEMAP 18
+st_cpf,False,20,alphanumeric,False,Cpf ou CNPJ
+st_nome,False,99,alphanumeric,False,
+st_endereco,False,900,alphanumeric,False,
+st_numero,False,29,alphanumeric,False,
+st_complemento,False,29,alphanumeric,False,
+st_bairro,False,99,alphanumeric,False,
+st_cidade,False,99,alphanumeric,False,
+st_UF,False,2,alphanumeric,False,
+st_cep,False,20,alphanumeric,False,
+st_ddd,False,3,alphanumeric,False,
+st_telefone,False,20,alphanumeric,False,
+dt_nasc,False,,datetime,False,
+st_email,False,199,alphanumeric,False,
+fk_profissao,False,,integer,True,
+nu_renda,False,,integer,True,
+vr_renda,False,,integer,False,
+id_instrucao,False,,integer,True,
+st_senhaEdu,False,16,alphanumeric,False,
+>TABLE 
+T_Dependente
+0
+#DESC 
+
+#TABLEMAP 4
+nu_titularidade,False,,integer,False,
+st_nome,False,40,alphanumeric,False,
+st_empresa,False,40,alphanumeric,True,
+fk_proprietario,False,,integer,False,
+>TABLE 
+LINK_ProprietarioCartao
+0
+#DESC 
+
+#TABLEMAP 2
+fk_cartao,False,,integer,False,
+fk_proprietario,False,,integer,False,
+>TABLE 
+T_Futebol
+1
+#DESC 
+
+#TABLEMAP 2
+st_logotipo,False,20,alphanumeric,False,
+st_nome,False,50,alphanumeric,False,
+>TABLE 
+T_Profissoes
+1
+#DESC 
+
+#TABLEMAP 2
+st_codigo,False,3,alphanumeric,False,
+st_profissao,False,50,alphanumeric,False,
+>TABLE 
+T_ComoSoube
+1
+#DESC 
+
+#TABLEMAP 1
+st_descricao,False,40,alphanumeric,False,
+>TABLE 
+T_Usuario
+0
+#DESC 
+
+#TABLEMAP 19
+st_name,False,20,alphanumeric,True,
+st_pass,False,16,alphanumeric,True,
+tg_nivel,False,1,alphanumeric,False,
+tg_logoff,False,1,alphanumeric,False,
+dt_trocaSenha,False,,datetime,False,
+dt_ultUso,False,,datetime,False,
+nu_senhaErrada,False,,integer,False,
+tg_trocaSenha,False,1,alphanumeric,False,
+st_senha_1,False,64,alphanumeric,False,
+st_senha_2,False,64,alphanumeric,False,
+st_senha_3,False,64,alphanumeric,False,
+st_senha_4,False,64,alphanumeric,False,
+st_senha_5,False,64,alphanumeric,False,
+st_empresa,False,6,alphanumeric,False,
+st_senha,False,64,alphanumeric,False,
+tg_bloqueio,False,1,alphanumeric,False,
+st_nome,False,20,alphanumeric,False,
+fk_quiosque,False,,integer,False,
+tg_aviso,False,,integer,False,Para avisar de nova versão
+>TABLE 
+LINK_LojaEmpresa
+0
+#DESC 
+
+#TABLEMAP 10
+fk_loja,False,,integer,False,
+fk_empresa,False,,integer,False,
+tx_admin,False,,integer,False,
+nu_dias_repasse,False,,integer,False,
+nu_ag,False,,integer,True,
+nu_banco,False,,integer,True,
+nu_conta,False,,integer,True,
+st_ag,False,10,alphanumeric,False,
+st_conta,False,15,alphanumeric,False,
+st_banco,False,15,alphanumeric,False,
+>TABLE 
+T_Loja
+0
+#DESC 
+Tabela de Lojas
+#TABLEMAP 32
+st_empresa,False,6,alphanumeric,True,
+nu_CNPJ,False,14,alphanumeric,False,
+st_nome,False,99,alphanumeric,False,
+st_social,False,99,alphanumeric,False,
+st_endereco,False,199,alphanumeric,False,
+st_enderecoInst,False,199,alphanumeric,False,
+nu_inscEst,False,20,alphanumeric,False,
+st_ramo,False,20,alphanumeric,True,
+st_cidade,False,99,alphanumeric,False,
+st_estado,False,2,alphanumeric,False,
+nu_CEP,False,18,alphanumeric,False,
+nu_telefone,False,20,alphanumeric,False,
+nu_fax,False,20,alphanumeric,False,
+st_contato,False,40,alphanumeric,False,
+vr_mensalidade,False,,integer,False,
+nu_contaDeb,False,20,alphanumeric,False,
+st_obs,False,900,alphanumeric,False,
+st_loja,False,40,alphanumeric,False,
+tg_blocked,False,1,alphanumeric,False,
+nu_cod_tb,False,,integer,True,
+nu_pctValor,False,,integer,False,percentual faturado sobre valor das transacoes
+vr_transacao,False,,integer,False,Valor fixo cobrado por transacao efetuada
+vr_minimo,False,,integer,False,valor minimo a  ser faturado
+nu_franquia,False,,integer,False,quantidade de transacoes gratuitas
+nu_periodoFat,False,,integer,False,Periodo do Mes para Faturamento
+nu_diavenc,False,,integer,False,dia do vencimento da fatura
+tg_tipoCobranca,False,1,alphanumeric,False,Tipo de Cobranca bancaria
+nu_bancoFat,False,,integer,False,Numero do Banco para Faturamento
+tg_isentoFat,False,,integer,False,Se é isento no faturamento
+st_acessoWeb,False,10,alphanumeric,True,Senha de acesso pelo sistema web
+st_senha,False,16,alphanumeric,False,
+tg_cancel,False,,integer,False,Se loja cancelada
+>TABLE 
+T_Empresa
+0
+#DESC 
+Tabela de Empresas ( associacoes ) para convenios
+#TABLEMAP 33
+st_empresa,False,6,alphanumeric,False,Codigo da Empresa
+nu_CNPJ,False,14,alphanumeric,False,CNPJ da empresa
+st_fantasia,False,99,alphanumeric,False,Nome Fantasia
+st_social,False,99,alphanumeric,False,Razão Social
+st_endereco,False,99,alphanumeric,False,
+st_cidade,False,99,alphanumeric,False,
+st_estado,False,2,alphanumeric,False,
+nu_CEP,False,14,alphanumeric,False,
+nu_telefone,False,20,alphanumeric,False,
+nu_cartoes,False,1,integer,False,Numero de Cartoes Existentes
+nu_parcelas,False,1,integer,False,Numero Maximo de Parcelas permitido pela empresa
+nu_fatura,False,,integer,True,
+nu_diaCredito,False,,integer,True,
+vr_taxa,False,,integer,True,
+nu_diasBloqueio,False,,integer,True,
+vr_pontos,False,1,integer,True,taxa conversão de pontos conforme o valor da transacao
+tg_blocked,False,1,alphanumeric,False,
+fk_admin,False,,integer,False,
+nu_contaDeb,False,20,alphanumeric,False,Banco
+vr_mensalidade,False,,integer,False,Tarifa Basica Mensal
+vr_cartaoAivo,False,,integer,True,valor faturado  por cartao ativo
+nu_pctValor,False,,integer,False,Valor percentual faturado por transacao
+vr_transacao,False,,integer,False,valor fixo faturado por transacao
+vr_minimo,False,,integer,False,Valor minimo a ser faturado 
+nu_franquia,False,,integer,False,Quantidade de transacoes gratuitas
+nu_periodoFat,False,,integer,False,Periodo de faturamento ( dia do mes)
+nu_diaVenc,False,,integer,False,Dia de vencimento da fatura
+tg_tipoCobranca,False,1,alphanumeric,False,Tipo de cobrança
+nu_bancoFat,False,,integer,False,Numero do banco para cobranca
+vr_cartaoAtivo,False,,integer,False,Valor faturado por cartao Ativo
+tg_isentoFat,False,,integer,False,Se é isento no faturamento
+st_obs,False,400,alphanumeric,False,
+tg_bloq,False,,integer,False,
+>TABLE 
+T_Terminal
+0
+#DESC 
+
+#TABLEMAP 4
+nu_terminal,False,12,alphanumeric,False,
+fk_empresa,False,,integer,True,
+fk_loja,False,,integer,False,
+st_localizacao,False,250,alphanumeric,False,
+>TABLE 
+LOG_Audit
+0
+#DESC 
+
+#TABLEMAP 5
+fk_usuario,False,,integer,False,
+tg_operacao,False,,integer,False,
+dt_operacao,False,,datetime,False,
+st_observacao,False,150,alphanumeric,False,
+fk_generic,False,,integer,False,
+>TABLE 
+LOG_NSU
+0
+#DESC 
+
+#TABLEMAP 1
+dt_log,False,,datetime,False,
+>TABLE 
+I_Scheduler
+0
+#DESC 
+
+#TABLEMAP 11
+st_job,False,400,alphanumeric,False,
+tg_type,False,1,alphanumeric,False,
+dt_specific,False,,datetime,False,
+st_daily_hhmm,False,4,alphanumeric,False,
+st_weekly_dow,False,,integer,False,
+st_weekly_hhmm,False,4,alphanumeric,False,
+nu_monthly_day,False,,integer,False,
+st_monthly_hhmm,False,4,alphanumeric,False,
+dt_last,False,,datetime,False,
+tg_status,False,1,alphanumeric,False,
+dt_prev,False,,datetime,False,
+>TABLE 
+LOG_Transacoes
+0
+#DESC 
+
+#TABLEMAP 22
+fk_terminal,False,,integer,False,
+dt_transacao,False,,datetime,False,
+nu_nsu,False,,integer,False,
+nu_nsuEntidade,False,,integer,True,
+fk_empresa,False,,integer,False,
+fk_cartao,False,,integer,False,
+vr_total,False,,integer,False,
+nu_parcelas,False,,integer,False,
+st_bin_cartao,False,20,alphanumeric,True,
+nu_cod_erro,False,,integer,False,
+tg_confirmada,False,1,alphanumeric,False,
+nu_nsuOrig,False,,integer,False,
+nu_nsuEntOrig,False,,integer,True,
+dt_transOrig,False,,datetime,True,
+en_operacao,False,10,alphanumeric,False,
+st_msg_transacao,False,50,alphanumeric,False,
+tg_contabil,False,1,alphanumeric,False,
+fk_loja,False,,integer,False,
+vr_saldo_disp,False,1,integer,False,Disponível no mês ou dia
+vr_saldo_disp_edu,False,,integer,True,
+vr_saldo_disp_tot,False,,integer,False,Disponivel total no momento da transação
+st_doc,False,20,alphanumeric,False,Documento apresentado na compra
+>TABLE 
+T_Parcelas
+0
+#DESC 
+
+#TABLEMAP 16
+nu_nsuEntidade,False,,integer,True,
+nu_nsu,False,,integer,False,
+fk_empresa,False,,integer,False,
+fk_cartao,False,,integer,False,
+dt_inclusao,False,,datetime,False,
+nu_parcela,False,,integer,False,
+vr_valor,False,,integer,False,
+dt_pagto_parcela,False,,datetime,True,
+nu_indice,False,,integer,False,
+tg_pago,False,1,alphanumeric,False,
+nu_cod_erro,False,,integer,True,
+tg_confirmada,False,1,alphanumeric,True,
+fk_loja,False,,integer,False,
+nu_tot_parcelas,False,,integer,False,
+fk_terminal,False,,integer,False,
+fk_log_transacoes,False,,integer,False,
+>TABLE 
+T_PayFone
+0
+#DESC 
+
+#TABLEMAP 4
+st_telefone,False,10,alphanumeric,False,
+tg_tipoCelular,False,1,alphanumeric,False,
+fk_cartao,False,,integer,False,
+fk_terminal,False,,integer,False,
+>TABLE 
+T_PendPayFone
+0
+#DESC 
+
+#TABLEMAP 8
+fk_cartao,False,,integer,False,
+fk_terminal,False,,integer,False,
+nu_nsu,False,,integer,False,
+vr_valor,False,,integer,False,
+dt_inclusao,False,,datetime,False,
+en_situacao,False,1,alphanumeric,False,
+fk_empresa,False,,integer,False,
+fk_loja,False,,integer,False,
+>TABLE 
+LINK_PFAtivacao
+0
+#DESC 
+
+#TABLEMAP 4
+fk_payfone,False,,integer,False,
+dt_ativacao,False,,datetime,False,
+st_ativacao,False,50,alphanumeric,False,
+tg_status,False,1,alphanumeric,False,
+>TABLE 
+LINK_Agenda
+0
+#DESC 
+
+#TABLEMAP 5
+fk_schedule,False,,integer,False,
+fk_empresa,False,,integer,False,
+en_atividade,False,,integer,False,
+st_afiliada,False,20,alphanumeric,True,
+st_emp_afiliada,False,20,alphanumeric,False,
+>TABLE 
+LOG_Fechamento
+0
+#DESC 
+
+#TABLEMAP 12
+st_mes,False,2,alphanumeric,False,
+st_ano,False,4,alphanumeric,False,
+vr_valor,False,,integer,False,
+dt_fechamento,False,,datetime,False,
+fk_empresa,False,,integer,False,
+fk_loja,False,,integer,False,
+fk_cartao,False,,integer,False,
+fk_parcela,False,,integer,False,
+dt_compra,False,,datetime,False,
+nu_parcela,False,,integer,False,
+st_cartao,False,14,alphanumeric,False,
+st_afiliada,False,20,alphanumeric,False,
+>TABLE 
+I_Batch
+0
+#DESC 
+
+#TABLEMAP 6
+st_archive,False,999,alphanumeric,False,
+dt_start,False,,datetime,False,
+dt_proc_start,False,,datetime,False,
+dt_proc_end,False,,datetime,False,
+tg_processed,False,1,alphanumeric,False,
+tg_running,False,1,alphanumeric,False,
+>TABLE 
+T_Edu_EmpresaVirtual
+0
+#DESC 
+
+#TABLEMAP 3
+st_nome,False,99,alphanumeric,False,
+st_codigo,False,20,alphanumeric,False,
+vr_valorAcao,False,,integer,False,
+>TABLE 
+T_Edu_AplicacaoVirtual
+0
+#DESC 
+
+#TABLEMAP 8
+fk_cartao,False,,integer,False,
+fk_empresaVirtual,False,,integer,False,
+vr_aplicado,False,,integer,False,
+vr_fundo,False,,integer,True,
+dt_aplic,False,,datetime,False,
+tg_neg,False,1,alphanumeric,False,
+vr_fundo_hora,False,,integer,False,
+vr_preco_fundo,False,,integer,False,
+>TABLE 
+LOG_Edu_RendimentoEmpresa
+0
+#DESC 
+
+#TABLEMAP 4
+fk_empresaVirtual,False,,integer,False,
+vr_pct,False,,integer,False,
+dt_rend,False,,datetime,False,
+tg_neg,False,1,alphanumeric,False,
+>TABLE 
+T_Edu_FundoEmpresa
+0
+#DESC 
+
+#TABLEMAP 5
+fk_cartao,False,,integer,False,
+fk_empresaVirtual,False,,integer,False,
+dt_dia,False,,datetime,True,
+vr_fundo,False,,integer,False,
+dt_efetivo,False,,datetime,False,
+>TABLE 
+LINK_Edu_FundoEmpresa
+0
+#DESC 
+
+#TABLEMAP 3
+fk_cartao,False,,integer,False,
+fk_empresa,False,,integer,False,
+vr_fundo,False,,integer,False,
+>TABLE 
+T_WebBlock
+0
+#DESC 
+
+#TABLEMAP 3
+st_ip,False,99,alphanumeric,False,
+fk_cartao,False,,integer,False,
+dt_expire,False,,datetime,False,
+>TABLE 
+T_Faturamento
+0
+#DESC 
+Tabela de Faturamento
+#TABLEMAP 7
+fk_empresa,False,,integer,False,Link tabela Empresas
+fk_loja,False,,integer,False,link tabela de Lojas
+vr_cobranca,False,,integer,False,Valor a ser faturado
+dt_vencimento,False,,datetime,False,data de vencimento da fatura
+dt_baixa,False,,datetime,False,data de quitacao da fatura
+tg_situacao,False,1,alphanumeric,False,Situacao da fatura 
+tg_retBanco,False,,integer,False,Código de retorno do banco
+>TABLE 
+T_FaturamentoDetalhes
+0
+#DESC 
+
+#TABLEMAP 8
+fk_fatura,False,,integer,False,Link tabela faturamento
+tg_tipoFat,False,1,integer,False,tipo de faturamento ( ENUM TipoFat )
+nu_quantidade,False,,integer,False,quantidade faturada
+vr_cobranca,False,,integer,False,Valor total a ser cobrado
+tg_desconto,False,1,alphanumeric,False,indicador de desconto ( vr_cobranca negativo)
+st_extras,False,100,alphanumeric,False,Descricao de item extra
+fk_empresa,False,,integer,False,Link com empresa
+fk_loja,False,,integer,False,Link com loja
+>TABLE 
+T_RetCobranca
+0
+#DESC 
+Tabela de código de ocorrências para arquivo de retorno do banco
+#TABLEMAP 4
+nu_codBanco,False,,integer,False,Código do Banco
+nu_cod,False,1,integer,False,Código de retorno
+tg_tipoCob,False,1,alphanumeric,False,(0) Cobrança (1) Débito
+st_codMsg,False,99,alphanumeric,False,Descrição do código
+>TABLE 
+LOG_NSA
+0
+#DESC 
+Auxilio em geração de sequencia para arquivo debito em conta
+#TABLEMAP 1
+dt_log,False,,datetime,False,
+>TABLE 
+LOG_NS_FAT
+0
+#DESC 
+Numero sequencial no envio diário de arquivo de faturamento
+#TABLEMAP 1
+dt_log,False,,datetime,False,
+>TABLE 
+T_Chamado
+0
+#DESC 
+
+#TABLEMAP 10
+fk_loja,False,,integer,False,
+tg_fechado,False,,integer,False,
+fk_operador,False,1,integer,False,
+nu_prioridade,False,,integer,False,
+nu_categoria,False,,integer,False,
+dt_abertura,False,,datetime,False,
+dt_fechamento,False,,datetime,False,
+st_motivo,False,900,alphanumeric,False,
+tg_tecnico,False,,integer,False,
+fk_oper_criador,False,,integer,False,
+>TABLE 
+LOG_Chamado
+0
+#DESC 
+
+#TABLEMAP 5
+fk_chamado,False,,integer,False,
+st_solution,False,900,alphanumeric,True,
+fk_operador,False,1,integer,False,Operador que escreveu alguma solução
+st_solucao,False,900,alphanumeric,False,
+dt_solucao,False,,datetime,False,
+>TABLE 
+T_ExtraGift
+0
+#DESC 
+
+#TABLEMAP 3
+st_nome,False,40,alphanumeric,False,
+vr_valor,False,,integer,False,
+fk_empresa,False,,integer,False,
+>TABLE 
+T_Quiosque
+0
+#DESC 
+
+#TABLEMAP 2
+fk_empresa,False,,integer,False,
+st_nome,False,40,alphanumeric,False,
+>TABLE 
+LOG_VendaCartaoGift
+0
+#DESC 
+
+#TABLEMAP 12
+fk_vendedor,False,,integer,False,
+fk_empresa,False,,integer,False,
+fk_cartao,False,,integer,False,
+dt_venda,False,,integer,True,
+tg_tipoPag,False,1,integer,False,Dinheiro
+dt_compra,False,,datetime,False,
+tg_tipoCartao,False,,integer,False,Visa
+st_cheque,False,80,alphanumeric,False,
+nu_nsuCartao,False,,integer,False,
+vr_carga,False,,integer,False,
+tg_adesao,False,,integer,False,
+st_codImpresso,False,90,alphanumeric,False,
+>TABLE 
+LOG_VendaProdutoGift
+0
+#DESC 
+
+#TABLEMAP 3
+fk_vendaCartao,False,,integer,False,
+st_produto,False,90,alphanumeric,False,
+vr_valor,False,,integer,False,
+>TABLE 
+T_ChequesGift
+0
+#DESC 
+
+#TABLEMAP 5
+st_identificador,False,40,alphanumeric,False,
+fk_cartao,False,,integer,False,
+dt_efetiva,False,,datetime,False,
+tg_compensado,False,1,integer,False,(0) Não (1) Sim (2) Cancelado
+vr_valor,False,,integer,False,
+>TABLE 
+LOG_GiftRanges
+0
+#DESC 
+
+#TABLEMAP 4
+fk_empresa,False,,integer,False,
+nu_inicio,False,,integer,False,
+nu_fim,False,,integer,False,
+dt_requisicao,False,,datetime,False,
+>TABLE 
+T_RepasseLoja
+0
+#DESC 
+
+#TABLEMAP 5
+fk_loja,False,,integer,False,
+tg_opcao,False,,integer,False,
+vr_valor,False,,integer,False,
+st_ident,False,90,alphanumeric,False,Ident se for cheque
+dt_efetiva,False,,datetime,False,
+>TABLE 
+LINK_RepasseParcela
+0
+#DESC 
+
+#TABLEMAP 2
+fk_repasseLoja,False,,integer,False,
+fk_parcela,False,,integer,False,
+>TABLE 
+tst
+1
+#DESC 
+
+#TABLEMAP 0
+>TABLE 
+T_EmpresaAfiliada
+0
+#DESC 
+
+#TABLEMAP 2
+st_nome,False,20,alphanumeric,False,
+fk_empresa,False,,integer,False,
+>TABLE 
+T_BoletoEdu
+0
+#DESC 
+
+#TABLEMAP 5
+dt_emissao,False,,datetime,False,
+vr_imediato,False,,integer,False,
+vr_educacional,False,,integer,False,
+fk_dadosProprietario,False,,integer,True,
+fk_cartao,False,,integer,False,
+>TABLE 
+LINK_UsuarioTerminal
+0
+#DESC 
+
+#TABLEMAP 2
+fk_user,False,,integer,False,
+fk_term,False,,integer,False,
+>TABLE 
+T_MensagemEdu
+0
+#DESC 
+
+#TABLEMAP 4
+st_mens,False,900,alphanumeric,False,
+fk_empresa,False,,integer,False,
+dt_ini,False,,datetime,False,
+dt_fim,False,,datetime,False,

@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <ProjectGuid>{4D5BBAF1-0368-407C-8062-1F8782B4D593}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>ConveyNet</AssemblyName>
+    <StartWorkingDirectory>..\..\..\..\..\..\..\ConveyNet\</StartWorkingDirectory>
+    <ApplicationIcon>..\Client\app.Ico</ApplicationIcon>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="ServerEngine">
+      <HintPath>ServerEngine.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="ZedGraph">
+      <HintPath>ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Container\DadosCartao.cs" />
+    <Compile Include="Container\CNetHeader.cs" />
+    <Compile Include="Container\DadosProprietario.cs" />
+    <Compile Include="Container\DadosAdicionais.cs" />
+    <Compile Include="Container\DadosUsuario.cs" />
+    <Compile Include="Container\DadosEmpresa.cs" />
+    <Compile Include="Container\DadosLoja.cs" />
+    <Compile Include="Container\DadosTerminal.cs" />
+    <Compile Include="Container\DadosConsultaLoja.cs" />
+    <Compile Include="Container\DadosConsultaEmpresa.cs" />
+    <Compile Include="Container\DadosConsultaAuditoria.cs" />
+    <Compile Include="Container\DadosAuditoria.cs" />
+    <Compile Include="Container\DadosConsultaCartoes.cs" />
+    <Compile Include="Container\POS_Resposta.cs" />
+    <Compile Include="Container\POS_Entrada.cs" />
+    <Compile Include="Container\DadosConsultaTransacao.cs" />
+    <Compile Include="Container\PF_DadosConsultaAutorizacao.cs" />
+    <Compile Include="Container\DadosNSU.cs" />
+    <Compile Include="Container\Rel_RTC.cs" />
+    <Compile Include="Container\Rel_RLT.cs" />
+    <Compile Include="Container\DadosAgenda.cs" />
+    <Compile Include="Container\DadosFechamento.cs" />
+    <Compile Include="Container\DadosRepasse.cs" />
+    <Compile Include="Container\DadosCartaoEdu.cs" />
+    <Compile Include="Container\EduExtrato.cs" />
+    <Compile Include="Container\DadosExpedicao.cs" />
+    <Compile Include="Container\DadosMovEmpresaVirtual.cs" />
+    <Compile Include="Container\DadosRanking.cs" />
+    <Compile Include="Container\Rel_RLE.cs" />
+    <Compile Include="Container\DadosDespesas.cs" />
+    <Compile Include="Container\Rel_FAT.cs" />
+    <Compile Include="Container\Entidade.cs" />
+    <Compile Include="Container\Rel_FatCompleto.cs" />
+    <Compile Include="Container\DadosChamado.cs" />
+    <Compile Include="Container\DadosAlteracaoChamado.cs" />
+    <Compile Include="Container\DadosProdutoGift.cs" />
+    <Compile Include="Container\DadosQuiosque.cs" />
+    <Compile Include="Container\DadosConsultaGift.cs" />
+    <Compile Include="Container\DadosSumarioRepasse.cs" />
+    <Compile Include="Container\DadosPagtoRepasse.cs" />
+    <Compile Include="Container\DadosFechCaixa.cs" />
+    <Compile Include="Container\DadosContabilGift.cs" />
+    <Compile Include="Container\DadosSinteticoContGift.cs" />
+    <Compile Include="Container\DadosRepRecibo.cs" />
+    <Compile Include="Container\Rel_Tarifas.cs" />
+    <Compile Include="Container\DadosComprovGift.cs" />
+    <Compile Include="Container\DadosGraficoFinanceiro.cs" />
+    <Compile Include="Container\DadosConsultaGraficoTransLojas.cs" />
+    <Compile Include="Container\DadosEduMessage.cs" />
+    <Compile Include="Container\Rel_MovEscola.cs" />
+    <Compile Include="Container\Rel_MovRedeEscola.cs" />
+    <Compile Include="Custom\ApplicationUtil.cs" />
+    <Compile Include="Custom\Reception\PayFone_AutorizaVendaPendente.cs" />
+    <Compile Include="Custom\Reception\PayFone_CancelaPendencia.cs" />
+    <Compile Include="Custom\Reception\PayFone_CancelaPendenciaLojista.cs" />
+    <Compile Include="Custom\Reception\PayFone_CancelaVenda.cs" />
+    <Compile Include="Custom\Reception\PayFone_ConsultaAutorizacao.cs" />
+    <Compile Include="Custom\Reception\PayFone_ConsultaPendencia.cs" />
+    <Compile Include="Custom\Reception\PayFone_GraficoGerencial.cs" />
+    <Compile Include="Custom\Reception\PayFone_GravaPendencia.cs" />
+    <Compile Include="Custom\Reception\PayFone_Instalacao.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarial.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialBuscaCartao.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialCancelamento.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialConfirmacao.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialDesfazer.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialDigitado.cs" />
+    <Compile Include="Custom\Reception\VendaEmpresarialGift.cs" />
+    <Compile Include="Custom\Release\ClusterInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\Release\ClusterInterface.Designer.cs">
+      <DependentUpon>ClusterInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\ServerRecept.cs" />
+    <Compile Include="Custom\UnitTesting\Automated.cs" />
+    <Compile Include="Custom\UnitTesting\tst_base.cs" />
+    <Compile Include="Custom\UnitTesting\UnitTest.cs" />
+    <Compile Include="Infra\Backup.cs" />
+    <Compile Include="Infra\Enumerations.cs" />
+    <Compile Include="Infra\InstallData.cs" />
+    <Compile Include="Infra\ServerDispatcher.cs" />
+    <Compile Include="Infra\Signatures.cs" />
+    <Compile Include="Infra\Tables.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Synchronization\T_Cartao.cs" />
+    <Compile Include="Synchronization\T_InfoAdicionais.cs" />
+    <Compile Include="Synchronization\T_Proprietario.cs" />
+    <Compile Include="Synchronization\T_Dependente.cs" />
+    <Compile Include="Synchronization\LINK_ProprietarioCartao.cs" />
+    <Compile Include="Synchronization\T_Usuario.cs" />
+    <Compile Include="Synchronization\LINK_LojaEmpresa.cs" />
+    <Compile Include="Synchronization\T_Loja.cs" />
+    <Compile Include="Synchronization\T_Empresa.cs" />
+    <Compile Include="Synchronization\T_Terminal.cs" />
+    <Compile Include="Synchronization\LOG_Audit.cs" />
+    <Compile Include="Synchronization\LOG_NSU.cs" />
+    <Compile Include="Synchronization\I_Scheduler.cs" />
+    <Compile Include="Synchronization\LOG_Transacoes.cs" />
+    <Compile Include="Synchronization\T_Parcelas.cs" />
+    <Compile Include="Synchronization\T_PayFone.cs" />
+    <Compile Include="Synchronization\T_PendPayFone.cs" />
+    <Compile Include="Synchronization\LINK_PFAtivacao.cs" />
+    <Compile Include="Synchronization\LINK_Agenda.cs" />
+    <Compile Include="Synchronization\LOG_Fechamento.cs" />
+    <Compile Include="Synchronization\I_Batch.cs" />
+    <Compile Include="Synchronization\T_Edu_EmpresaVirtual.cs" />
+    <Compile Include="Synchronization\T_Edu_AplicacaoVirtual.cs" />
+    <Compile Include="Synchronization\LOG_Edu_RendimentoEmpresa.cs" />
+    <Compile Include="Synchronization\T_Edu_FundoEmpresa.cs" />
+    <Compile Include="Synchronization\LINK_Edu_FundoEmpresa.cs" />
+    <Compile Include="Synchronization\T_WebBlock.cs" />
+    <Compile Include="Synchronization\T_Faturamento.cs" />
+    <Compile Include="Synchronization\T_FaturamentoDetalhes.cs" />
+    <Compile Include="Synchronization\T_RetCobranca.cs" />
+    <Compile Include="Synchronization\LOG_NSA.cs" />
+    <Compile Include="Synchronization\LOG_NS_FAT.cs" />
+    <Compile Include="Synchronization\T_Chamado.cs" />
+    <Compile Include="Synchronization\LOG_Chamado.cs" />
+    <Compile Include="Synchronization\T_ExtraGift.cs" />
+    <Compile Include="Synchronization\T_Quiosque.cs" />
+    <Compile Include="Synchronization\LOG_VendaCartaoGift.cs" />
+    <Compile Include="Synchronization\LOG_VendaProdutoGift.cs" />
+    <Compile Include="Synchronization\T_ChequesGift.cs" />
+    <Compile Include="Synchronization\LOG_GiftRanges.cs" />
+    <Compile Include="Synchronization\T_RepasseLoja.cs" />
+    <Compile Include="Synchronization\LINK_RepasseParcela.cs" />
+    <Compile Include="Synchronization\T_EmpresaAfiliada.cs" />
+    <Compile Include="Synchronization\T_BoletoEdu.cs" />
+    <Compile Include="Synchronization\LINK_UsuarioTerminal.cs" />
+    <Compile Include="Synchronization\T_MensagemEdu.cs" />
+    <Compile Include="Tests\tst_type_base.cs" />
+    <Compile Include="Tests\tst_ins_cartaoProprietario.cs" />
+    <Compile Include="Tests\tst_fetch_proprietario.cs" />
+    <Compile Include="Tests\tst_exec_login.cs" />
+    <Compile Include="Tests\tst_exec_logoff.cs" />
+    <Compile Include="Tests\tst_exec_trocaSenha.cs" />
+    <Compile Include="Tests\tst_ins_usuario.cs" />
+    <Compile Include="Tests\tst_fetch_listaUsuarios.cs" />
+    <Compile Include="Tests\tst_fetch_usuarios.cs" />
+    <Compile Include="Tests\tst_exec_alteraUsuario.cs" />
+    <Compile Include="Tests\tst_ins_empresa.cs" />
+    <Compile Include="Tests\tst_ins_loja.cs" />
+    <Compile Include="Tests\tst_fetch_dadosEmpresa.cs" />
+    <Compile Include="Tests\tst_fetch_dadosLoja.cs" />
+    <Compile Include="Tests\tst_exec_alteraEmpresa.cs" />
+    <Compile Include="Tests\tst_exec_alteraLoja.cs" />
+    <Compile Include="Tests\tst_fetch_codTerminal.cs" />
+    <Compile Include="Tests\tst_fetch_nomeEmpresa.cs" />
+    <Compile Include="Tests\tst_fetch_validaEmpresa.cs" />
+    <Compile Include="Tests\tst_ins_terminal.cs" />
+    <Compile Include="Tests\tst_fetch_terminais.cs" />
+    <Compile Include="Tests\tst_fetch_terminalLoja.cs" />
+    <Compile Include="Tests\tst_del_Terminal.cs" />
+    <Compile Include="Tests\tst_fetch_consultaLoja.cs" />
+    <Compile Include="Tests\tst_fetch_consultaEmpresa.cs" />
+    <Compile Include="Tests\tst_fetch_consultaAuditoria.cs" />
+    <Compile Include="Tests\tst_exec_alteraTerminal.cs" />
+    <Compile Include="Tests\tst_fetch_limitesCartao.cs" />
+    <Compile Include="Tests\tst_exec_alteraCartao.cs" />
+    <Compile Include="Tests\tst_fetch_consultaCartao.cs" />
+    <Compile Include="Tests\tst_infra_SchedulerDispatcher.cs" />
+    <Compile Include="Tests\tst_schedule_base.cs" />
+    <Compile Include="Tests\tst_exec_pos_vendaEmpresarial.cs" />
+    <Compile Include="Tests\tst_exec_pos_confirmaVendaEmpresarial.cs" />
+    <Compile Include="Tests\tst_fetch_consultaTransacao.cs" />
+    <Compile Include="Tests\tst_exec_pf_gravaPendencia.cs" />
+    <Compile Include="Tests\tst_exec_pf_consultaPendencia.cs" />
+    <Compile Include="Tests\tst_type_pf_base.cs" />
+    <Compile Include="Tests\tst_exec_pf_cancelaPendencia.cs" />
+    <Compile Include="Tests\tst_exec_pf_autorizaVendaPendente.cs" />
+    <Compile Include="Tests\tst_exec_pf_consultaAutorizacao.cs" />
+    <Compile Include="Tests\tst_ins_payFone.cs" />
+    <Compile Include="Tests\tst_ins_payFoneLojista.cs" />
+    <Compile Include="Tests\tst_exec_alteraSenhaCartao.cs" />
+    <Compile Include="Tests\tst_exec_pf_cancelaVenda.cs" />
+    <Compile Include="Tests\tst_fetch_pf_telefoneLojista.cs" />
+    <Compile Include="Tests\tst_fetch_dadosCartao.cs" />
+    <Compile Include="Tests\tst_fetch_nomeLoja.cs" />
+    <Compile Include="Tests\tst_fetch_termLoja.cs" />
+    <Compile Include="Tests\tst_fetch_nomeLojaTerminal.cs" />
+    <Compile Include="Tests\tst_exec_pf_cancelaPendenciaLojista.cs" />
+    <Compile Include="Tests\tst_fetch_dadosNSU.cs" />
+    <Compile Include="Tests\tst_exec_pos_cancelaVendaEmpresarial.cs" />
+    <Compile Include="Tests\tst_fetch_rel_1_rtc.cs" />
+    <Compile Include="Tests\tst_fetch_rel_2_rlt.cs" />
+    <Compile Include="Tests\tst_schedule_nsu.cs" />
+    <Compile Include="Tests\tst_exec_pf_autorizaInstalacao.cs" />
+    <Compile Include="Tests\tst_ins_agenda.cs" />
+    <Compile Include="Tests\tst_schedule_fech_mensal.cs" />
+    <Compile Include="Tests\tst_fetch_agenda.cs" />
+    <Compile Include="Tests\tst_del_agenda.cs" />
+    <Compile Include="Tests\tst_fetch_rel_3_fech.cs" />
+    <Compile Include="Tests\tst_fetch_memory.cs" />
+    <Compile Include="Tests\tst_schedule_educacional.cs" />
+    <Compile Include="Tests\tst_fetch_listaConveniosLoja.cs" />
+    <Compile Include="Tests\tst_fetch_rel_4_rrp.cs" />
+    <Compile Include="Tests\tst_fetch_dadosAluno.cs" />
+    <Compile Include="Tests\tst_exec_depotEduImediato.cs" />
+    <Compile Include="Tests\tst_fetch_rel_edu_extrato.cs" />
+    <Compile Include="Tests\tst_exec_bloqueio.cs" />
+    <Compile Include="Tests\tst_exec_desbloqueio.cs" />
+    <Compile Include="Tests\tst_exec_cancelaEmpresa.cs" />
+    <Compile Include="Tests\tst_web_fetch_saldo_edu.cs" />
+    <Compile Include="Tests\tst_web_fetch_edu_inicial.cs" />
+    <Compile Include="Tests\tst_web_fetch_rel_edu_extrato.cs" />
+    <Compile Include="Tests\tst_web_fetch_resp_alunos.cs" />
+    <Compile Include="Tests\tst_web_exec_trocaLim.cs" />
+    <Compile Include="Tests\tst_web_exec_alterSenhaEdu.cs" />
+    <Compile Include="Tests\tst_schedule_batch.cs" />
+    <Compile Include="Tests\tst_schedule_proc_batch.cs" />
+    <Compile Include="Tests\tst_load_edu.cs" />
+    <Compile Include="Tests\tst_type_load.cs" />
+    <Compile Include="Tests\tst_exec_edu_habilita.cs" />
+    <Compile Include="Tests\tst_fetch_cartoes_grafica.cs" />
+    <Compile Include="Tests\tst_exec_edu_alteraDiario.cs" />
+    <Compile Include="Tests\tst_web_fetch_edu_virtual.cs" />
+    <Compile Include="Tests\tst_load_edu_emp_virtual.cs" />
+    <Compile Include="Tests\tst_schedule_edu_fundo.cs" />
+    <Compile Include="Tests\tst_web_fetch_edu_emp_hist.cs" />
+    <Compile Include="Tests\tst_web_exec_edu_aplic_fundo.cs" />
+    <Compile Include="Tests\tst_exec_edu_cancelaCartao.cs" />
+    <Compile Include="Tests\tst_exec_edu_segundaVia.cs" />
+    <Compile Include="Tests\tst_fetch_dadosAdministradora.cs" />
+    <Compile Include="Tests\tst_exec_alteraAdminEmpresa.cs" />
+    <Compile Include="Tests\tst_web_fetch_edu_ranking.cs" />
+    <Compile Include="Tests\tst_exec_conf_cartao.cs" />
+    <Compile Include="Tests\tst_fetch_edu_nomeAluno.cs" />
+    <Compile Include="Tests\tst_load_legado.cs" />
+    <Compile Include="Tests\tst_fetch_rel_5_rle.cs" />
+    <Compile Include="Tests\tst_exec_pos_desfazVendaEmpresarial.cs" />
+    <Compile Include="Tests\tst_schedule_faturamento.cs" />
+    <Compile Include="Tests\tst_fetch_dadosFaturamento.cs" />
+    <Compile Include="Tests\tst_ins_despesa.cs" />
+    <Compile Include="Tests\tst_fetch_dadosDespesas.cs" />
+    <Compile Include="Tests\tst_exec_cancelaDespesa.cs" />
+    <Compile Include="Tests\tst_fetch_rel_6_fat.cs" />
+    <Compile Include="Tests\tst_exec_segundaVia.cs" />
+    <Compile Include="Tests\tst_fetch_arquivoFat.cs" />
+    <Compile Include="Tests\tst_upload_archive.cs" />
+    <Compile Include="Tests\tst_exec_processaArqBancario.cs" />
+    <Compile Include="Tests\tst_fetch_relFat.cs" />
+    <Compile Include="Tests\tst_exec_alteraProprietario.cs" />
+    <Compile Include="Tests\tst_fetch_conveyUsuarios.cs" />
+    <Compile Include="Tests\tst_fetch_chamados.cs" />
+    <Compile Include="Tests\tst_ins_chamado.cs" />
+    <Compile Include="Tests\tst_fetch_chamadoHist.cs" />
+    <Compile Include="Tests\tst_exec_alteraChamado.cs" />
+    <Compile Include="Tests\tst_fetch_extraGift.cs" />
+    <Compile Include="Tests\tst_ins_extraGift.cs" />
+    <Compile Include="Tests\tst_del_extraGift.cs" />
+    <Compile Include="Tests\tst_fetch_quiosque.cs" />
+    <Compile Include="Tests\tst_fetch_vendedorQuiosque.cs" />
+    <Compile Include="Tests\tst_exec_vincQuiosque.cs" />
+    <Compile Include="Tests\tst_ins_quiosque.cs" />
+    <Compile Include="Tests\tst_del_quiosque.cs" />
+    <Compile Include="Tests\tst_fetch_comprov_Gift.cs" />
+    <Compile Include="Tests\tst_exec_validGift.cs" />
+    <Compile Include="Tests\tst_exec_recargaGift.cs" />
+    <Compile Include="Tests\tst_fetch_consultaLojasGift.cs" />
+    <Compile Include="Tests\tst_fetch_consultaCartaoGift.cs" />
+    <Compile Include="Tests\tst_fetch_reciboVendaGift.cs" />
+    <Compile Include="Tests\tst_fetch_proprietarioGift.cs" />
+    <Compile Include="Tests\tst_fetch_chequeGift.cs" />
+    <Compile Include="Tests\tst_exec_compensaChequeGift.cs" />
+    <Compile Include="Tests\tst_exec_cancelaChequeGift.cs" />
+    <Compile Include="Tests\tst_fetch_repasseData.cs" />
+    <Compile Include="Tests\tst_exec_repasseLoja.cs" />
+    <Compile Include="Tests\tst_fetch_convenioLojaGift.cs" />
+    <Compile Include="Tests\tst_fetch_softwareVersion.cs" />
+    <Compile Include="Tests\tst_infra_fetchIncomingVersion.cs" />
+    <Compile Include="Tests\tst_infra_fetchFile.cs" />
+    <Compile Include="Tests\tst_infra_fetchUpdaterVersion.cs" />
+    <Compile Include="Tests\tst_fetch_rel_repEfetivo.cs" />
+    <Compile Include="Tests\tst_fetch_consultaLojista.cs" />
+    <Compile Include="Tests\tst_fetch_rel_fechCaixa.cs" />
+    <Compile Include="Tests\tst_ins_dependente.cs" />
+    <Compile Include="Tests\tst_fetch_rel_dirCont.cs" />
+    <Compile Include="Tests\tst_fetch_codLoja.cs" />
+    <Compile Include="Tests\tst_fetch_reciboRepasse.cs" />
+    <Compile Include="Tests\tst_exec_resolvePend.cs" />
+    <Compile Include="Tests\tst_fetch_empresasAfiliadas.cs" />
+    <Compile Include="Tests\tst_exec_pos_buscaCartao.cs" />
+    <Compile Include="Tests\tst_exec_fat_recManual.cs" />
+    <Compile Include="Tests\tst_fetch_empresasGrafica.cs" />
+    <Compile Include="Tests\tst_exec_bloq_loja.cs" />
+    <Compile Include="Tests\tst_exec_desbloq_loja.cs" />
+    <Compile Include="Tests\tst_exec_cancel_Loja.cs" />
+    <Compile Include="Tests\tst_web_exec_confirmaBoleto.cs" />
+    <Compile Include="Tests\tst_fetch_user_lojista.cs" />
+    <Compile Include="Tests\tst_exec_vincula_lojista.cs" />
+    <Compile Include="Tests\tst_fetch_reciboVendaLojista.cs" />
+    <Compile Include="Tests\tst_fetch_lojistaEmpresas.cs" />
+    <Compile Include="Tests\tst_fetch_rel_prevLojista.cs" />
+    <Compile Include="Tests\tst_fetch_rel_tarifas.cs" />
+    <Compile Include="Tests\tst_graph_financeiro.cs" />
+    <Compile Include="Tests\tst_fetch_listaTransacoesLojas.cs" />
+    <Compile Include="Tests\tst_graph_transacoes.cs" />
+    <Compile Include="Tests\tst_exec_pf_graficoGerencial.cs" />
+    <Compile Include="Tests\tst_exec_processaArqConvenio.cs" />
+    <Compile Include="Tests\tst_fetch_consultaLojistaRep.cs" />
+    <Compile Include="Tests\tst_exec_loginLojista.cs" />
+    <Compile Include="Tests\tst_fetch_listawebConveniosLoja.cs" />
+    <Compile Include="Tests\tst_exec_loginWeb.cs" />
+    <Compile Include="Tests\tst_fetch_extratoWeb.cs" />
+    <Compile Include="Tests\tst_fetch_edu_messages.cs" />
+    <Compile Include="Tests\tst_ins_edu_msg.cs" />
+    <Compile Include="Tests\tst_del_edu_msg.cs" />
+    <Compile Include="Tests\tst_exec_change_edu_msg.cs" />
+    <Compile Include="Tests\tst_fetch_rel_residuo_gift.cs" />
+    <Compile Include="Tests\tst_fetch_extratoWebFuturo.cs" />
+    <Compile Include="Tests\tst_exec_venda_pend_lojista.cs" />
+    <Compile Include="Tests\tst_fetch_canc_dia_lojista.cs" />
+    <Compile Include="Tests\tst_fetch_financ_lojista.cs" />
+    <Compile Include="Tests\tst_fetch_listaFiliais.cs" />
+    <Compile Include="Tests\tst_fetch_rel_edu_movEscola.cs" />
+    <Compile Include="Tests\tst_fetch_rel_edu_movRedeEscola.cs" />
+    <Compile Include="Tests\tst_exec_bloq_empresa.cs" />
+    <Compile Include="Tests\tst_exec_desbloq_empresa.cs" />
+    <Compile Include="Tests\tst_fetch_cotaExtra_carts.cs" />
+    <Compile Include="Tests\tst_exec_cotaExtraEmpresa.cs" />
+    <Compile Include="Tests\tst_fetch_rel_listaCarts.cs" />
+    <Compile Include="Tests\tst_fetch_rel_listaLojas.cs" />
+    <Compile Include="Tests\tst_exec_excluiCart.cs" />
+    <Compile Include="Transaction\exec_pos_desfazVendaEmpresarialSITEF.cs" />
+    <Compile Include="Transaction\exec_pos_vendaEmpresarialSITEF.cs" />
+    <Compile Include="Transaction\type_base.cs" />
+    <Compile Include="Transaction\ins_cartaoProprietario.cs" />
+    <Compile Include="Transaction\fetch_proprietario.cs" />
+    <Compile Include="Transaction\exec_login.cs" />
+    <Compile Include="Transaction\exec_logoff.cs" />
+    <Compile Include="Transaction\exec_trocaSenha.cs" />
+    <Compile Include="Transaction\ins_usuario.cs" />
+    <Compile Include="Transaction\fetch_listaUsuarios.cs" />
+    <Compile Include="Transaction\fetch_usuarios.cs" />
+    <Compile Include="Transaction\exec_alteraUsuario.cs" />
+    <Compile Include="Transaction\ins_empresa.cs" />
+    <Compile Include="Transaction\ins_loja.cs" />
+    <Compile Include="Transaction\fetch_dadosEmpresa.cs" />
+    <Compile Include="Transaction\fetch_dadosLoja.cs" />
+    <Compile Include="Transaction\exec_alteraEmpresa.cs" />
+    <Compile Include="Transaction\exec_alteraLoja.cs" />
+    <Compile Include="Transaction\fetch_codTerminal.cs" />
+    <Compile Include="Transaction\fetch_nomeEmpresa.cs" />
+    <Compile Include="Transaction\fetch_validaEmpresa.cs" />
+    <Compile Include="Transaction\ins_terminal.cs" />
+    <Compile Include="Transaction\fetch_terminais.cs" />
+    <Compile Include="Transaction\fetch_terminalLoja.cs" />
+    <Compile Include="Transaction\del_Terminal.cs" />
+    <Compile Include="Transaction\fetch_consultaLoja.cs" />
+    <Compile Include="Transaction\fetch_consultaEmpresa.cs" />
+    <Compile Include="Transaction\fetch_consultaAuditoria.cs" />
+    <Compile Include="Transaction\exec_alteraTerminal.cs" />
+    <Compile Include="Transaction\fetch_limitesCartao.cs" />
+    <Compile Include="Transaction\exec_alteraCartao.cs" />
+    <Compile Include="Transaction\fetch_consultaCartao.cs" />
+    <Compile Include="Transaction\infra_SchedulerDispatcher.cs" />
+    <Compile Include="Transaction\schedule_base.cs" />
+    <Compile Include="Transaction\exec_pos_vendaEmpresarial.cs" />
+    <Compile Include="Transaction\exec_pos_confirmaVendaEmpresarial.cs" />
+    <Compile Include="Transaction\fetch_consultaTransacao.cs" />
+    <Compile Include="Transaction\exec_pf_gravaPendencia.cs" />
+    <Compile Include="Transaction\exec_pf_consultaPendencia.cs" />
+    <Compile Include="Transaction\type_pf_base.cs" />
+    <Compile Include="Transaction\exec_pf_cancelaPendencia.cs" />
+    <Compile Include="Transaction\exec_pf_autorizaVendaPendente.cs" />
+    <Compile Include="Transaction\exec_pf_consultaAutorizacao.cs" />
+    <Compile Include="Transaction\ins_payFone.cs" />
+    <Compile Include="Transaction\ins_payFoneLojista.cs" />
+    <Compile Include="Transaction\exec_alteraSenhaCartao.cs" />
+    <Compile Include="Transaction\exec_pf_cancelaVenda.cs" />
+    <Compile Include="Transaction\fetch_pf_telefoneLojista.cs" />
+    <Compile Include="Transaction\fetch_dadosCartao.cs" />
+    <Compile Include="Transaction\fetch_nomeLoja.cs" />
+    <Compile Include="Transaction\fetch_termLoja.cs" />
+    <Compile Include="Transaction\fetch_nomeLojaTerminal.cs" />
+    <Compile Include="Transaction\exec_pf_cancelaPendenciaLojista.cs" />
+    <Compile Include="Transaction\fetch_dadosNSU.cs" />
+    <Compile Include="Transaction\exec_pos_cancelaVendaEmpresarial.cs" />
+    <Compile Include="Transaction\fetch_rel_1_rtc.cs" />
+    <Compile Include="Transaction\fetch_rel_2_rlt.cs" />
+    <Compile Include="Transaction\schedule_nsu.cs" />
+    <Compile Include="Transaction\exec_pf_autorizaInstalacao.cs" />
+    <Compile Include="Transaction\ins_agenda.cs" />
+    <Compile Include="Transaction\schedule_fech_mensal.cs" />
+    <Compile Include="Transaction\fetch_agenda.cs" />
+    <Compile Include="Transaction\del_agenda.cs" />
+    <Compile Include="Transaction\fetch_rel_3_fech.cs" />
+    <Compile Include="Transaction\fetch_memory.cs" />
+    <Compile Include="Transaction\schedule_educacional.cs" />
+    <Compile Include="Transaction\fetch_listaConveniosLoja.cs" />
+    <Compile Include="Transaction\fetch_rel_4_rrp.cs" />
+    <Compile Include="Transaction\fetch_dadosAluno.cs" />
+    <Compile Include="Transaction\exec_depotEduImediato.cs" />
+    <Compile Include="Transaction\fetch_rel_edu_extrato.cs" />
+    <Compile Include="Transaction\exec_bloqueio.cs" />
+    <Compile Include="Transaction\exec_desbloqueio.cs" />
+    <Compile Include="Transaction\exec_cancelaEmpresa.cs" />
+    <Compile Include="Transaction\web_fetch_saldo_edu.cs" />
+    <Compile Include="Transaction\web_fetch_edu_inicial.cs" />
+    <Compile Include="Transaction\web_fetch_rel_edu_extrato.cs" />
+    <Compile Include="Transaction\web_fetch_resp_alunos.cs" />
+    <Compile Include="Transaction\web_exec_trocaLim.cs" />
+    <Compile Include="Transaction\web_exec_alterSenhaEdu.cs" />
+    <Compile Include="Transaction\schedule_batch.cs" />
+    <Compile Include="Transaction\schedule_proc_batch.cs" />
+    <Compile Include="Transaction\load_edu.cs" />
+    <Compile Include="Transaction\type_load.cs" />
+    <Compile Include="Transaction\exec_edu_habilita.cs" />
+    <Compile Include="Transaction\fetch_cartoes_grafica.cs" />
+    <Compile Include="Transaction\exec_edu_alteraDiario.cs" />
+    <Compile Include="Transaction\web_fetch_edu_virtual.cs" />
+    <Compile Include="Transaction\load_edu_emp_virtual.cs" />
+    <Compile Include="Transaction\schedule_edu_fundo.cs" />
+    <Compile Include="Transaction\web_fetch_edu_emp_hist.cs" />
+    <Compile Include="Transaction\web_exec_edu_aplic_fundo.cs" />
+    <Compile Include="Transaction\exec_edu_cancelaCartao.cs" />
+    <Compile Include="Transaction\exec_edu_segundaVia.cs" />
+    <Compile Include="Transaction\fetch_dadosAdministradora.cs" />
+    <Compile Include="Transaction\exec_alteraAdminEmpresa.cs" />
+    <Compile Include="Transaction\web_fetch_edu_ranking.cs" />
+    <Compile Include="Transaction\exec_conf_cartao.cs" />
+    <Compile Include="Transaction\fetch_edu_nomeAluno.cs" />
+    <Compile Include="Transaction\load_legado.cs" />
+    <Compile Include="Transaction\fetch_rel_5_rle.cs" />
+    <Compile Include="Transaction\exec_pos_desfazVendaEmpresarial.cs" />
+    <Compile Include="Transaction\schedule_faturamento.cs" />
+    <Compile Include="Transaction\fetch_dadosFaturamento.cs" />
+    <Compile Include="Transaction\ins_despesa.cs" />
+    <Compile Include="Transaction\fetch_dadosDespesas.cs" />
+    <Compile Include="Transaction\exec_cancelaDespesa.cs" />
+    <Compile Include="Transaction\fetch_rel_6_fat.cs" />
+    <Compile Include="Transaction\exec_segundaVia.cs" />
+    <Compile Include="Transaction\fetch_arquivoFat.cs" />
+    <Compile Include="Transaction\upload_archive.cs" />
+    <Compile Include="Transaction\exec_processaArqBancario.cs" />
+    <Compile Include="Transaction\fetch_relFat.cs" />
+    <Compile Include="Transaction\exec_alteraProprietario.cs" />
+    <Compile Include="Transaction\fetch_conveyUsuarios.cs" />
+    <Compile Include="Transaction\fetch_chamados.cs" />
+    <Compile Include="Transaction\ins_chamado.cs" />
+    <Compile Include="Transaction\fetch_chamadoHist.cs" />
+    <Compile Include="Transaction\exec_alteraChamado.cs" />
+    <Compile Include="Transaction\fetch_extraGift.cs" />
+    <Compile Include="Transaction\ins_extraGift.cs" />
+    <Compile Include="Transaction\del_extraGift.cs" />
+    <Compile Include="Transaction\fetch_quiosque.cs" />
+    <Compile Include="Transaction\fetch_vendedorQuiosque.cs" />
+    <Compile Include="Transaction\exec_vincQuiosque.cs" />
+    <Compile Include="Transaction\ins_quiosque.cs" />
+    <Compile Include="Transaction\del_quiosque.cs" />
+    <Compile Include="Transaction\fetch_comprov_Gift.cs" />
+    <Compile Include="Transaction\exec_validGift.cs" />
+    <Compile Include="Transaction\exec_recargaGift.cs" />
+    <Compile Include="Transaction\fetch_consultaLojasGift.cs" />
+    <Compile Include="Transaction\fetch_consultaCartaoGift.cs" />
+    <Compile Include="Transaction\fetch_reciboVendaGift.cs" />
+    <Compile Include="Transaction\fetch_proprietarioGift.cs" />
+    <Compile Include="Transaction\fetch_chequeGift.cs" />
+    <Compile Include="Transaction\exec_compensaChequeGift.cs" />
+    <Compile Include="Transaction\exec_cancelaChequeGift.cs" />
+    <Compile Include="Transaction\fetch_repasseData.cs" />
+    <Compile Include="Transaction\exec_repasseLoja.cs" />
+    <Compile Include="Transaction\fetch_convenioLojaGift.cs" />
+    <Compile Include="Transaction\fetch_softwareVersion.cs" />
+    <Compile Include="Transaction\infra_fetchIncomingVersion.cs" />
+    <Compile Include="Transaction\infra_fetchFile.cs" />
+    <Compile Include="Transaction\infra_fetchUpdaterVersion.cs" />
+    <Compile Include="Transaction\fetch_rel_repEfetivo.cs" />
+    <Compile Include="Transaction\fetch_consultaLojista.cs" />
+    <Compile Include="Transaction\fetch_rel_fechCaixa.cs" />
+    <Compile Include="Transaction\ins_dependente.cs" />
+    <Compile Include="Transaction\fetch_rel_dirCont.cs" />
+    <Compile Include="Transaction\fetch_codLoja.cs" />
+    <Compile Include="Transaction\fetch_reciboRepasse.cs" />
+    <Compile Include="Transaction\exec_resolvePend.cs" />
+    <Compile Include="Transaction\fetch_empresasAfiliadas.cs" />
+    <Compile Include="Transaction\exec_pos_buscaCartao.cs" />
+    <Compile Include="Transaction\exec_fat_recManual.cs" />
+    <Compile Include="Transaction\fetch_empresasGrafica.cs" />
+    <Compile Include="Transaction\exec_bloq_loja.cs" />
+    <Compile Include="Transaction\exec_desbloq_loja.cs" />
+    <Compile Include="Transaction\exec_cancel_Loja.cs" />
+    <Compile Include="Transaction\web_exec_confirmaBoleto.cs" />
+    <Compile Include="Transaction\fetch_user_lojista.cs" />
+    <Compile Include="Transaction\exec_vincula_lojista.cs" />
+    <Compile Include="Transaction\fetch_reciboVendaLojista.cs" />
+    <Compile Include="Transaction\fetch_lojistaEmpresas.cs" />
+    <Compile Include="Transaction\fetch_rel_prevLojista.cs" />
+    <Compile Include="Transaction\fetch_rel_tarifas.cs" />
+    <Compile Include="Transaction\graph_financeiro.cs" />
+    <Compile Include="Transaction\fetch_listaTransacoesLojas.cs" />
+    <Compile Include="Transaction\graph_transacoes.cs" />
+    <Compile Include="Transaction\exec_pf_graficoGerencial.cs" />
+    <Compile Include="Transaction\exec_processaArqConvenio.cs" />
+    <Compile Include="Transaction\fetch_consultaLojistaRep.cs" />
+    <Compile Include="Transaction\exec_loginLojista.cs" />
+    <Compile Include="Transaction\fetch_listawebConveniosLoja.cs" />
+    <Compile Include="Transaction\exec_loginWeb.cs" />
+    <Compile Include="Transaction\fetch_extratoWeb.cs" />
+    <Compile Include="Transaction\fetch_edu_messages.cs" />
+    <Compile Include="Transaction\ins_edu_msg.cs" />
+    <Compile Include="Transaction\del_edu_msg.cs" />
+    <Compile Include="Transaction\exec_change_edu_msg.cs" />
+    <Compile Include="Transaction\fetch_rel_residuo_gift.cs" />
+    <Compile Include="Transaction\fetch_extratoWebFuturo.cs" />
+    <Compile Include="Transaction\exec_venda_pend_lojista.cs" />
+    <Compile Include="Transaction\fetch_canc_dia_lojista.cs" />
+    <Compile Include="Transaction\fetch_financ_lojista.cs" />
+    <Compile Include="Transaction\fetch_listaFiliais.cs" />
+    <Compile Include="Transaction\fetch_rel_edu_movEscola.cs" />
+    <Compile Include="Transaction\fetch_rel_edu_movRedeEscola.cs" />
+    <Compile Include="Transaction\exec_bloq_empresa.cs" />
+    <Compile Include="Transaction\exec_desbloq_empresa.cs" />
+    <Compile Include="Transaction\fetch_cotaExtra_carts.cs" />
+    <Compile Include="Transaction\exec_cotaExtraEmpresa.cs" />
+    <Compile Include="Transaction\fetch_rel_listaCarts.cs" />
+    <Compile Include="Transaction\fetch_rel_listaLojas.cs" />
+    <Compile Include="Transaction\exec_excluiCart.cs" />
+    <EmbeddedResource Include="Custom\Release\ClusterInterface.resx">
+      <DependentUpon>ClusterInterface.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+</Project>

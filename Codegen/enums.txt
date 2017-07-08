@@ -1,0 +1,414 @@
+﻿>REGISTRYCLIENT InfraSoftwareClient
+>REGISTRYSERVER InfraSoftwareServer
+>ENUM 
+Context
+#7
+TRUE,1
+FALSE,0
+NOT_SET,0
+EMPTY,
+OPEN,0
+CLOSED,1
+NONE,0
+>ENUM 
+Language
+#2
+English,0
+Portuguese,1
+>ENUM 
+LanguageDesc
+#2
+English,LanguageDesc.English
+Portuguese,LanguageDesc.Portuguese
+>ENUM 
+InfraSoftwareServer
+#17
+nameServer,ConveyNet
+db_schema,AutorizadorCN
+pathDir,pathDir
+db_choice,db_choice
+slaveOnly,slaveOnly
+db_machine,db_machine
+maxPacket,maxPacket
+clientServerPort,clientServerPort
+user,user
+password,password
+db_port,db_port
+upgradePath,upgradePath
+language,language
+standBy,standBy
+standByPort,standByPort
+failFS,failFS
+webStandBy,webStandBy
+>ENUM 
+InfraSoftwareClient
+#11
+nameClient,ConveyNet
+pathDir,pathDir
+maxPacket,maxPacket
+clientServerPort,clientServerPort
+serverMachine,serverMachine
+upgradePath,upgradePath
+language,language
+lastUser,lastUser
+app,app
+serverStandby,serverStandby
+serverStandByPort,serverStandByPort
+>ENUM 
+CartaoStatus
+#3
+Habilitado,0
+Bloqueado,1
+EmDesativacao,2
+>ENUM 
+CartaoMotivoBloqueio
+#1
+Expirado,0
+>ENUM 
+Erro
+#5
+Generico,Falha geral de processo
+NovoCartao,Falha na criação de novo cartão
+CartaoExiste,Cartão já foi cadastrado
+RendaSupZero,O valor de renda deve ser superior a zero
+ProfissaoInexistente,Profissão inexistente
+>ENUM 
+TipoUsuario
+#9
+SuperUser,0
+Administrador,1
+Operador,2
+OperadorEdu,3
+OperadorCont,4
+OperadorConvey,5
+VendedorGift,6
+AdminGift,7
+Lojista,8
+>ENUM 
+AlteraUsuario
+#5
+Bloqueio,0
+Desbloqueio,1
+TrocaSenha,2
+Remover,3
+ResetSenha,4
+>ENUM 
+TipoOperacao
+#50
+CadNovoOper,1
+AlterOper,2
+CadEmpresa,3
+AlterEmpresa,4
+CadLoja,5
+AlterLoja,6
+CadTerminal,7
+AlterTerminal,8
+CadCartao,9
+TrocaSenha,10
+RemoverTerminal,11
+Login,12
+Logoff,13
+AlterCartao,14
+AlterSenha,15
+CadPayFoneCliente,16
+CadPayFoneLojista,17
+NovaAgenda,18
+RemAgenda,19
+AlterEduDiario,20
+CadDespesa,21
+RemDespesa,22
+RemProdGift,23
+RemQuiosqueGift,24
+AlterChamConvey,25
+AltDadosPropCart,26
+CancChequeGift,27
+CancCadEmpresa,28
+CompChequeGift,29
+ConfCartConv,30
+ProcArqBanConvey,31
+RecargaGift,32
+RepasseLojaGift,33
+ReqSegViaCart,34
+VincVendQuiosque,35
+CadChamadoConvey,36
+CadDepenCart,37
+CadProdExtraGift,38
+CadNovoQuiosque,39
+GeraArqGrafica,40
+BloqueioCartao,41
+DesbloqueioCartao,42
+BloqueioLoja,43
+DesbloqueioLoja,44
+CancelLoja,45
+RemoveConvenio,46
+ResolvePend,47
+CancelamentoCartao,48
+VendaGift,49
+CotaExtraMensal,50
+>ENUM 
+TipoOperacaoDesc
+#50
+CadNovoOper,Cadstramento de Operador
+AlterOper,Manutenção de Operador
+CadEmpresa,Cadastramento de Empresa
+AlterEmpresa,Manutenção de Empresa
+CadLoja,Cadastramento de Loja
+AlterLoja,Manutenção de Loja
+CadTerminal,Cadastramento de Terminal
+AlterTerminal,Manutenção de Terminal
+CadCartao,Cadastramento de Cartão
+TrocaSenha,Troca de Senha
+RemoverTerminal,Remoção de Terminal
+Login,Login de Usuário
+Logoff,Logoff de Usuário
+AlterCartao,Alteração de Cartão
+AlterSenha,Altera Senha de usuário de cartão
+CadPayFoneCliente,Cadastro de Pay Fone para cliente
+CadPayFoneLojista,Cadastro de pay Fone para lojista
+NovaAgenda,Novo agendamento de tarefa
+RemAgenda,Remoção de agendamento de tarefa
+AlterEduDiario,Alteração de limite diário educacional
+CadDespesa,Cadastramento de despesa
+RemDespesa,Cancelamento de despesa
+RemProdGift,Remoção de produto gift
+RemQuiosqueGift,Remoção de quiosque gift
+AlterChamConvey,Alteração de chamado conveynet
+AltDadosPropCart,Alteração de dados cadastrais de prop. cartão
+CancChequeGift,Cancelamento de cheque gift
+CancCadEmpresa,Cancela cadastro de empresa
+CompChequeGift,Compensação de cheque gift
+ConfCartConv,Confirmação de cartão convênio
+ProcArqBanConvey,Processamento de arquivo bancário
+RecargaGift,Recarga de cartão gift
+RepasseLojaGift,Repasse de loja gift
+ReqSegViaCart,Requerimento de segunda via de cartão
+VincVendQuiosque,Vinculação de vendedor para quiosque
+CadChamadoConvey,Cadastro de chamado
+CadDepenCart,Criação de dependente de cartão
+CadProdExtraGift,Cadastro de produto extra gift
+CadNovoQuiosque,Cadastro de novo quiosque
+GeraArqGrafica,Gera arquivo de cartões para gráfica
+BloqueioCartao,Bloqueio de cartão
+DesbloqueioCartao,Desbloqueio de cartão
+BloqueioLoja,Bloqueio de Loja
+DesbloqueioLoja,Desbloqueio de Loja
+CancelLoja,Cancelamento de contrato de loja
+RemoveConvenio,Remoção de convênio
+ResolvePend,Resolução de pendências
+CancelamentoCartao,Cancelamento de Cartão
+VendaGift,Venda pelo quiosque
+CotaExtraMensal,Cota Extra Mensal
+>ENUM 
+Scheduler
+#5
+Specific,0
+Daily,1
+Weekly,2
+Monthly,3
+Minute,4
+>ENUM 
+TipoParcela
+#4
+EM_ABERTO,0
+QUITADO,1
+CONTESTADO,2
+CANCELADA,3
+>ENUM 
+OperacaoCartao
+#22
+VENDA_EMPRESARIAL,0
+CONF_VENDA_EMP,1
+PAY_FONE_GRAVA_PEND,2
+PAY_FONE_CANCELA_PEND,3
+PAY_FONE_AUTORIZA_VENDA,4
+PAY_FONE_CONFIRMA_VENDA,5
+PAY_FONE_CANCELA_VENDA,6
+PAY_FONE_CANCELA_PEND_LOJISTA,7
+FALHA_VENDA_EMPRESARIAL,8
+FALHA_PAY_FONE_GRAVA_PEND,9
+FALHA_PAY_FONE_CANCELA_PEND,10
+FALHA_PAY_FONE_AUTORIZA_VENDA,11
+FALHA_PAY_FONE_CONFIRMA_VENDA,12
+FALHA_PAY_FONE_CANCELA_VENDA,13
+FALHA_PAY_FONE_CANCELA_PEND_LOJISTA,14
+VENDA_EMPRESARIAL_CANCELA,15
+FALHA_VENDA_EMPRESARIAL_CANCELA,16
+FALHA_CONF_VENDA_EMP,17
+EDU_DEP_IMEDIATO,18
+EDU_DEP_FUNDO,19
+EDU_DEP_DIARIO,20
+VENDA_EMPRESARIAL_DESFAZ,21
+>ENUM 
+OperacaoCartaoDesc
+#22
+VENDA_EMPRESARIAL,Venda
+CONF_VENDA_EMP,Confirmação Venda
+PAY_FONE_GRAVA_PEND,Venda Pay Fone
+PAY_FONE_CANCELA_PEND,Cancelamento de Pendências de Pay Fone
+PAY_FONE_AUTORIZA_VENDA,Autorização de Venda de Pay Fone
+PAY_FONE_CONFIRMA_VENDA,Confirmação de Venda por Pay Fone
+PAY_FONE_CANCELA_VENDA,Cancelamento de Venda por Pay Fone
+PAY_FONE_CANCELA_PEND_LOJISTA,Cancelamento de Venda Pay Fone pelo lojista
+FALHA_VENDA_EMPRESARIAL,Falha na Venda
+FALHA_PAY_FONE_GRAVA_PEND,Falha na Gravação de Pendência para Pay Fone
+FALHA_PAY_FONE_CANCELA_PEND,Falha no Cancelamento de Pendência de Pay Fone
+FALHA_PAY_FONE_AUTORIZA_VENDA,Falha na Autorização de Venda de Pay Fone
+FALHA_PAY_FONE_CONFIRMA_VENDA,Falha na Confirmação de Venda de Pay Fone
+FALHA_PAY_FONE_CANCELA_VENDA,Falha no Cancelamento de Venda de Pay Fone
+FALHA_PAY_FONE_CANCELA_PEND_LOJISTA,Falha no Cancelamento de Pendência por Lojista de Payfone
+VENDA_EMPRESARIAL_CANCELA,Cancelamento de Venda
+FALHA_VENDA_EMPRESARIAL_CANCELA,Falha no Cancelamento de Venda
+FALHA_CONF_VENDA_EMP,Falha na Confirmação de Venda
+EDU_DEP_IMEDIATO,Depósito Imediato Educacional
+EDU_DEP_FUNDO,Depósito Fundo Educacional
+EDU_DEP_DIARIO,Transferência Automática Educacional
+VENDA_EMPRESARIAL_DESFAZ,Desfazimento de venda empresarial pendente
+>ENUM 
+TipoCelular
+#3
+LOJA,0
+CLIENTE,1
+LOJA_TB,2
+>ENUM 
+TipoPendPayFone
+#4
+PENDENTE,0
+CANCELADO,1
+CONFIRMADO,2
+NEGADO,3
+>ENUM 
+TipoCartao
+#3
+empresarial,0
+presente,1
+educacional,2
+>ENUM 
+TipoCartaoDesc
+#3
+empresarial,Cartão Empresarial
+presente,Cartão GiftCard
+educacional,Cartão Universitário
+>ENUM 
+CartaoStatusDesc
+#2
+Habilitado,Habilitado
+Bloqueado,Bloqueado
+>ENUM 
+TipoConfirmacao
+#7
+Pendente,0
+Confirmada,1
+Negada,2
+Erro,3
+Registro,4
+Cancelada,5
+Desfeita,6
+>ENUM 
+TipoConfirmacaoDesc
+#7
+Pendente,Pendente
+Confirmada,Confirmada
+Negada,Negada
+Erro,Erro
+Registro,Registro
+Cancelada,Cancelada
+Desfeita,Desfeita
+>ENUM 
+TipoAtividade
+#1
+FechMensal,1
+>ENUM 
+TipoAtividadeDesc
+#1
+FechMensal,Fechamento Mensal
+>ENUM 
+MotivoBloqueio
+#5
+PERDA,0
+ROUBO,1
+SENHA_ERRADA,2
+CANCELAMENTO,3
+ADMINISTRATIVO,4
+>ENUM 
+MotivoBloqueioDesc
+#5
+PERDA,Perda de Cartão
+ROUBO,Roubo de cartão
+SENHA_ERRADA,Senha - excedido numero de tentativas
+CANCELAMENTO,Cancelamento de cartão
+ADMINISTRATIVO,Motivo administrativo
+>ENUM 
+StatusExpedicao
+#3
+NaoExpedido,0
+EmExpedicao,1
+Expedido,2
+>ENUM 
+TipoCobranca
+#2
+Doc,0
+DebitoCC,1
+>ENUM 
+TipoCobrancaDesc
+#2
+Doc,DOC Bancário
+DebitoCC,Débito em Conta Corrente
+>ENUM 
+TipoSitFat
+#7
+Pendente,0
+PagoCC,1
+PagoDoc,2
+PagoOutros,3
+Cancelado,4
+EmCobrança,5
+BaixaCfeInst,6
+>ENUM 
+TipoSitFatDesc
+#6
+Pendente,Pendente pagamento
+PagoCC,Pago via  Debito Conta Corrente
+PagoDoc,Pago via DOC
+PagoOutros,Pago outra forma
+Cancelado,Fatura Cancelada
+BaixaCfeInst,Baixa Conforme Instruções
+>ENUM 
+TipoFat
+#5
+TBM,1
+CartaoAtiv,2
+FixoTrans,3
+Percent,4
+Extras,5
+>ENUM 
+TipoFatDesc
+#5
+TBM,Tarifa Básica Mensal
+CartaoAtiv,Cartões Ativos
+FixoTrans,Valor Fixo por Transação Efetuada
+Percent,Percentual do Valor da Transação
+Extras,Extras
+>ENUM 
+Parametros
+#3
+Empresa,ConveyNET
+Cedente,839854166077
+ConvenioDebConta,00650
+>ENUM 
+TipoUsuarioDesc
+#9
+SuperUser,Super usuário
+Administrador,Administrador
+Operador,Operador
+OperadorEdu,Operador Educacional
+OperadorCont,Operador Contábil
+OperadorConvey,Operador ConveyNET
+VendedorGift,Vendedor Gift Card
+AdminGift,Administrador Gift Card
+Lojista,Vendedor Varejo
+>ENUM 
+TipoPagamento
+#3
+Dinheiro,0
+Cheque,1
+Cartao,2

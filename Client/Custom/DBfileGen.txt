@@ -1,0 +1,27 @@
+	DBfileGen dbf = new DBfileGen(@"C:\Temp_DBF", "fechamento", "dbf");
+            dbf.addCampo("data", "date");
+            dbf.addCampo("nsu", "string");
+            dbf.addCampo("matricula", "varchar(6)");
+            dbf.addCampo("valor", "currency");
+            dbf.addCampo("parcela", "varchar(6)");
+            dbf.addCampo("cnpj", "varchar(14)");
+            
+            ArrayList   reg  =   new ArrayList();
+            reg.Add ("26/11/2007");
+            reg.Add ("123123");
+            reg.Add("000004");
+            reg.Add (12.01);
+            reg.Add("2/3");
+            reg.Add ("122222222222");
+            dbf.addReg(reg);
+
+            reg = new ArrayList();
+            reg.Add("27/11/2007");
+            reg.Add("222333");
+            reg.Add("000004");
+            reg.Add(1211.02);
+            reg.Add("2/3");
+            reg.Add("122222222222");
+            dbf.addReg(reg);
+
+            dbf.save();	

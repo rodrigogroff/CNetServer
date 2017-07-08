@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <ProjectGuid>{F2AE5334-8F70-4610-A6A2-9846A79A1049}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ServerSetup</RootNamespace>
+    <AssemblyName>ServerSetup</AssemblyName>
+    <StartWorkingDirectory>bin\Release\</StartWorkingDirectory>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="InstallEngine">
+      <HintPath>InstallEngine.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Ctrls\ctrl_appDir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_appDir.Designer.cs">
+      <DependentUpon>ctrl_appDir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_bdChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_bdChoice.Designer.cs">
+      <DependentUpon>ctrl_bdChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_configInstall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_configInstall.Designer.cs">
+      <DependentUpon>ctrl_configInstall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_installing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_installing.Designer.cs">
+      <DependentUpon>ctrl_installing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_Intro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_Intro.Designer.cs">
+      <DependentUpon>ctrl_Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_softRemove.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ctrl_softRemove.Designer.cs">
+      <DependentUpon>ctrl_softRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Infra\Patch.cs" />
+    <Compile Include="Infra\Tables.cs" />
+    <Compile Include="InstallData.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Synchronization\T_Cartao.cs" />
+    <Compile Include="Synchronization\T_InfoAdicionais.cs" />
+    <Compile Include="Synchronization\T_Proprietario.cs" />
+    <Compile Include="Synchronization\T_Dependente.cs" />
+    <Compile Include="Synchronization\LINK_ProprietarioCartao.cs" />
+    <Compile Include="Synchronization\T_Usuario.cs" />
+    <Compile Include="Synchronization\LINK_LojaEmpresa.cs" />
+    <Compile Include="Synchronization\T_Loja.cs" />
+    <Compile Include="Synchronization\T_Empresa.cs" />
+    <Compile Include="Synchronization\T_Terminal.cs" />
+    <Compile Include="Synchronization\LOG_Audit.cs" />
+    <Compile Include="Synchronization\LOG_NSU.cs" />
+    <Compile Include="Synchronization\I_Scheduler.cs" />
+    <Compile Include="Synchronization\LOG_Transacoes.cs" />
+    <Compile Include="Synchronization\T_Parcelas.cs" />
+    <Compile Include="Synchronization\T_PayFone.cs" />
+    <Compile Include="Synchronization\T_PendPayFone.cs" />
+    <Compile Include="Synchronization\LINK_PFAtivacao.cs" />
+    <Compile Include="Synchronization\LINK_Agenda.cs" />
+    <Compile Include="Synchronization\LOG_Fechamento.cs" />
+    <Compile Include="Synchronization\I_Batch.cs" />
+    <Compile Include="Synchronization\T_Edu_EmpresaVirtual.cs" />
+    <Compile Include="Synchronization\T_Edu_AplicacaoVirtual.cs" />
+    <Compile Include="Synchronization\LOG_Edu_RendimentoEmpresa.cs" />
+    <Compile Include="Synchronization\T_Edu_FundoEmpresa.cs" />
+    <Compile Include="Synchronization\LINK_Edu_FundoEmpresa.cs" />
+    <Compile Include="Synchronization\T_WebBlock.cs" />
+    <Compile Include="Synchronization\T_Faturamento.cs" />
+    <Compile Include="Synchronization\T_FaturamentoDetalhes.cs" />
+    <Compile Include="Synchronization\T_RetCobranca.cs" />
+    <Compile Include="Synchronization\LOG_NSA.cs" />
+    <Compile Include="Synchronization\LOG_NS_FAT.cs" />
+    <Compile Include="Synchronization\T_Chamado.cs" />
+    <Compile Include="Synchronization\LOG_Chamado.cs" />
+    <Compile Include="Synchronization\T_ExtraGift.cs" />
+    <Compile Include="Synchronization\T_Quiosque.cs" />
+    <Compile Include="Synchronization\LOG_VendaCartaoGift.cs" />
+    <Compile Include="Synchronization\LOG_VendaProdutoGift.cs" />
+    <Compile Include="Synchronization\T_ChequesGift.cs" />
+    <Compile Include="Synchronization\LOG_GiftRanges.cs" />
+    <Compile Include="Synchronization\T_RepasseLoja.cs" />
+    <Compile Include="Synchronization\LINK_RepasseParcela.cs" />
+    <Compile Include="Synchronization\T_EmpresaAfiliada.cs" />
+    <Compile Include="Synchronization\T_BoletoEdu.cs" />
+    <Compile Include="Synchronization\LINK_UsuarioTerminal.cs" />
+    <Compile Include="Synchronization\T_MensagemEdu.cs" />
+    <EmbeddedResource Include="Ctrls\ctrl_appDir.resx">
+      <DependentUpon>ctrl_appDir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ctrl_bdChoice.resx">
+      <DependentUpon>ctrl_bdChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ctrl_configInstall.resx">
+      <DependentUpon>ctrl_configInstall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ctrl_installing.resx">
+      <DependentUpon>ctrl_installing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ctrl_Intro.resx">
+      <DependentUpon>ctrl_Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ctrl_softRemove.resx">
+      <DependentUpon>ctrl_softRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+</Project>

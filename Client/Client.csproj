@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D53E292-B961-491D-9816-515CF8BC1800}</ProjectGuid>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>True</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <StartWorkingDirectory>..\..\..\..\..\..\..\ConveyNet Client\</StartWorkingDirectory>
+    <ApplicationIcon>app.Ico</ApplicationIcon>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Administrator\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>Full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientEngine">
+      <HintPath>ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mobile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="ZedGraph">
+      <HintPath>ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container\DadosCartao.cs" />
+    <Compile Include="Container\CNetHeader.cs" />
+    <Compile Include="Container\DadosProprietario.cs" />
+    <Compile Include="Container\DadosAdicionais.cs" />
+    <Compile Include="Container\DadosUsuario.cs" />
+    <Compile Include="Container\DadosEmpresa.cs" />
+    <Compile Include="Container\DadosLoja.cs" />
+    <Compile Include="Container\DadosTerminal.cs" />
+    <Compile Include="Container\DadosConsultaLoja.cs" />
+    <Compile Include="Container\DadosConsultaEmpresa.cs" />
+    <Compile Include="Container\DadosConsultaAuditoria.cs" />
+    <Compile Include="Container\DadosAuditoria.cs" />
+    <Compile Include="Container\DadosConsultaCartoes.cs" />
+    <Compile Include="Container\POS_Resposta.cs" />
+    <Compile Include="Container\POS_Entrada.cs" />
+    <Compile Include="Container\DadosConsultaTransacao.cs" />
+    <Compile Include="Container\PF_DadosConsultaAutorizacao.cs" />
+    <Compile Include="Container\DadosNSU.cs" />
+    <Compile Include="Container\Rel_RTC.cs" />
+    <Compile Include="Container\Rel_RLT.cs" />
+    <Compile Include="Container\DadosAgenda.cs" />
+    <Compile Include="Container\DadosFechamento.cs" />
+    <Compile Include="Container\DadosRepasse.cs" />
+    <Compile Include="Container\DadosCartaoEdu.cs" />
+    <Compile Include="Container\EduExtrato.cs" />
+    <Compile Include="Container\DadosExpedicao.cs" />
+    <Compile Include="Container\DadosMovEmpresaVirtual.cs" />
+    <Compile Include="Container\DadosRanking.cs" />
+    <Compile Include="Container\Rel_RLE.cs" />
+    <Compile Include="Container\DadosDespesas.cs" />
+    <Compile Include="Container\Rel_FAT.cs" />
+    <Compile Include="Container\Entidade.cs" />
+    <Compile Include="Container\Rel_FatCompleto.cs" />
+    <Compile Include="Container\DadosChamado.cs" />
+    <Compile Include="Container\DadosAlteracaoChamado.cs" />
+    <Compile Include="Container\DadosProdutoGift.cs" />
+    <Compile Include="Container\DadosQuiosque.cs" />
+    <Compile Include="Container\DadosConsultaGift.cs" />
+    <Compile Include="Container\DadosSumarioRepasse.cs" />
+    <Compile Include="Container\DadosPagtoRepasse.cs" />
+    <Compile Include="Container\DadosFechCaixa.cs" />
+    <Compile Include="Container\DadosContabilGift.cs" />
+    <Compile Include="Container\DadosSinteticoContGift.cs" />
+    <Compile Include="Container\DadosRepRecibo.cs" />
+    <Compile Include="Container\Rel_Tarifas.cs" />
+    <Compile Include="Container\DadosComprovGift.cs" />
+    <Compile Include="Container\DadosGraficoFinanceiro.cs" />
+    <Compile Include="Container\DadosConsultaGraficoTransLojas.cs" />
+    <Compile Include="Container\DadosEduMessage.cs" />
+    <Compile Include="Container\Rel_MovEscola.cs" />
+    <Compile Include="Container\Rel_MovRedeEscola.cs" />
+    <Compile Include="Custom\ApplicationUtil.cs" />
+    <Compile Include="Custom\DBfileGen.cs" />
+    <Compile Include="Custom\dlgAutorizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\dlgAutorizacao.Designer.cs">
+      <DependentUpon>dlgAutorizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\dlgGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\dlgGraph.Designer.cs">
+      <DependentUpon>dlgGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\dlgStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\dlgStatus.Designer.cs">
+      <DependentUpon>dlgStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\Printer.cs" />
+    <Compile Include="Custom\SyCrafReport.cs" />
+    <Compile Include="Dialogs\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoCartao.Designer.cs">
+      <DependentUpon>dlgNovoCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgLogin.Designer.cs">
+      <DependentUpon>dlgLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgPassword.Designer.cs">
+      <DependentUpon>dlgPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCadastroUsuario.Designer.cs">
+      <DependentUpon>dlgCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovaEmpresa.Designer.cs">
+      <DependentUpon>dlgNovaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovaLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovaLoja.Designer.cs">
+      <DependentUpon>dlgNovaLoja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgManutencaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgManutencaoUsuario.Designer.cs">
+      <DependentUpon>dlgManutencaoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoTerminal.Designer.cs">
+      <DependentUpon>dlgNovoTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgSelecionaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgSelecionaEmpresa.Designer.cs">
+      <DependentUpon>dlgSelecionaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgManutencaoTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgManutencaoTerminal.Designer.cs">
+      <DependentUpon>dlgManutencaoTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConvenios.Designer.cs">
+      <DependentUpon>dlgConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaLoja.Designer.cs">
+      <DependentUpon>dlgConsultaLoja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaEmpresa.Designer.cs">
+      <DependentUpon>dlgConsultaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaAuditoria.Designer.cs">
+      <DependentUpon>dlgConsultaAuditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgLocalizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgLocalizacao.Designer.cs">
+      <DependentUpon>dlgLocalizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgLimiteCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgLimiteCartao.Designer.cs">
+      <DependentUpon>dlgLimiteCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaCartao.Designer.cs">
+      <DependentUpon>dlgConsultaCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaTransacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaTransacoes.Designer.cs">
+      <DependentUpon>dlgConsultaTransacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgGravaPendenciaPayFone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgGravaPendenciaPayFone.Designer.cs">
+      <DependentUpon>dlgGravaPendenciaPayFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaPendenciaPayFone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaPendenciaPayFone.Designer.cs">
+      <DependentUpon>dlgCancelaPendenciaPayFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgVerificaPendenciaPayFone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgVerificaPendenciaPayFone.Designer.cs">
+      <DependentUpon>dlgVerificaPendenciaPayFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgAutorizaVendaPayFone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgAutorizaVendaPayFone.Designer.cs">
+      <DependentUpon>dlgAutorizaVendaPayFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgPF_CadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgPF_CadastroCliente.Designer.cs">
+      <DependentUpon>dlgPF_CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgPF_CadastroLojista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgPF_CadastroLojista.Designer.cs">
+      <DependentUpon>dlgPF_CadastroLojista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgAlterarSenhaCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgAlterarSenhaCartao.Designer.cs">
+      <DependentUpon>dlgAlterarSenhaCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaEmpresarial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaEmpresarial.Designer.cs">
+      <DependentUpon>dlgVendaEmpresarial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgSelecionaTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgSelecionaTerminal.Designer.cs">
+      <DependentUpon>dlgSelecionaTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaEmpresarialCancelamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaEmpresarialCancelamento.Designer.cs">
+      <DependentUpon>dlgVendaEmpresarialCancelamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaVendaPayFone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaVendaPayFone.Designer.cs">
+      <DependentUpon>dlgCancelaVendaPayFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgRelatorios.Designer.cs">
+      <DependentUpon>dlgRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgAgendamento.Designer.cs">
+      <DependentUpon>dlgAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCadastroAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCadastroAtividade.Designer.cs">
+      <DependentUpon>dlgCadastroAtividade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFechamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFechamento.Designer.cs">
+      <DependentUpon>dlgFechamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgEducacional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgEducacional.Designer.cs">
+      <DependentUpon>dlgEducacional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgBloqueio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgBloqueio.Designer.cs">
+      <DependentUpon>dlgBloqueio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgDesbloqueio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgDesbloqueio.Designer.cs">
+      <DependentUpon>dlgDesbloqueio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgHabilitarCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgHabilitarCartao.Designer.cs">
+      <DependentUpon>dlgHabilitarCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgExpedicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgExpedicao.Designer.cs">
+      <DependentUpon>dlgExpedicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfCartao.Designer.cs">
+      <DependentUpon>dlgConfCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgEduCancelarCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgEduCancelarCartao.Designer.cs">
+      <DependentUpon>dlgEduCancelarCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgEduSegundaVia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgEduSegundaVia.Designer.cs">
+      <DependentUpon>dlgEduSegundaVia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgAdminEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgAdminEmpresas.Designer.cs">
+      <DependentUpon>dlgAdminEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFaturamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFaturamento.Designer.cs">
+      <DependentUpon>dlgFaturamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatExtra.Designer.cs">
+      <DependentUpon>dlgFatExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCancelaDespesa.Designer.cs">
+      <DependentUpon>dlgCancelaDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgSegundaVia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgSegundaVia.Designer.cs">
+      <DependentUpon>dlgSegundaVia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatGerarArquivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatGerarArquivo.Designer.cs">
+      <DependentUpon>dlgFatGerarArquivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgRecebeArqBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgRecebeArqBanco.Designer.cs">
+      <DependentUpon>dlgRecebeArqBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatRel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatRel.Designer.cs">
+      <DependentUpon>dlgFatRel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgDadosCadastrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgDadosCadastrais.Designer.cs">
+      <DependentUpon>dlgDadosCadastrais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoChamado.Designer.cs">
+      <DependentUpon>dlgNovoChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgPesquisaChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgPesquisaChamado.Designer.cs">
+      <DependentUpon>dlgPesquisaChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgEditaChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgEditaChamado.Designer.cs">
+      <DependentUpon>dlgEditaChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCustoChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCustoChamado.Designer.cs">
+      <DependentUpon>dlgCustoChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgExtrasGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgExtrasGift.Designer.cs">
+      <DependentUpon>dlgExtrasGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfGiftCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfGiftCard.Designer.cs">
+      <DependentUpon>dlgConfGiftCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgQuiosque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgQuiosque.Designer.cs">
+      <DependentUpon>dlgQuiosque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFinalGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFinalGift.Designer.cs">
+      <DependentUpon>dlgFinalGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgRecargaGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgRecargaGift.Designer.cs">
+      <DependentUpon>dlgRecargaGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConsultaGift.Designer.cs">
+      <DependentUpon>dlgConsultaGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCompensaCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCompensaCheque.Designer.cs">
+      <DependentUpon>dlgCompensaCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfirmarRepasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfirmarRepasse.Designer.cs">
+      <DependentUpon>dlgConfirmarRepasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfFinalRepasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgConfFinalRepasse.Designer.cs">
+      <DependentUpon>dlgConfFinalRepasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgUpdate.Designer.cs">
+      <DependentUpon>dlgUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoDependente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgNovoDependente.Designer.cs">
+      <DependentUpon>dlgNovoDependente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgResPend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgResPend.Designer.cs">
+      <DependentUpon>dlgResPend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatRecManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFatRecManual.Designer.cs">
+      <DependentUpon>dlgFatRecManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgLojista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgLojista.Designer.cs">
+      <DependentUpon>dlgLojista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaLojista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaLojista.Designer.cs">
+      <DependentUpon>dlgVendaLojista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaParcelada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgVendaParcelada.Designer.cs">
+      <DependentUpon>dlgVendaParcelada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgPrevLojista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgPrevLojista.Designer.cs">
+      <DependentUpon>dlgPrevLojista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgObservacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgObservacao.Designer.cs">
+      <DependentUpon>dlgObservacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgReimpGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgReimpGift.Designer.cs">
+      <DependentUpon>dlgReimpGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgDBF_Fechamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgDBF_Fechamento.Designer.cs">
+      <DependentUpon>dlgDBF_Fechamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgGraficosEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgGraficosEmp.Designer.cs">
+      <DependentUpon>dlgGraficosEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgRemessa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgRemessa.Designer.cs">
+      <DependentUpon>dlgRemessa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgMensagensEdu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgMensagensEdu.Designer.cs">
+      <DependentUpon>dlgMensagensEdu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgCotaExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgCotaExtra.Designer.cs">
+      <DependentUpon>dlgCotaExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventLayers\event_MainForm.cs" />
+    <Compile Include="EventLayers\event_dlgNovoCartao.cs" />
+    <Compile Include="EventLayers\event_dlgLogin.cs" />
+    <Compile Include="EventLayers\event_dlgPassword.cs" />
+    <Compile Include="EventLayers\event_dlgCadastroUsuario.cs" />
+    <Compile Include="EventLayers\event_dlgNovaEmpresa.cs" />
+    <Compile Include="EventLayers\event_dlgNovaLoja.cs" />
+    <Compile Include="EventLayers\event_dlgManutencaoUsuario.cs" />
+    <Compile Include="EventLayers\event_dlgNovoTerminal.cs" />
+    <Compile Include="EventLayers\event_dlgSelecionaEmpresa.cs" />
+    <Compile Include="EventLayers\event_dlgManutencaoTerminal.cs" />
+    <Compile Include="EventLayers\event_dlgConvenios.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaLoja.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaEmpresa.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaAuditoria.cs" />
+    <Compile Include="EventLayers\event_dlgLocalizacao.cs" />
+    <Compile Include="EventLayers\event_dlgLimiteCartao.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaCartao.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaTransacoes.cs" />
+    <Compile Include="EventLayers\event_dlgGravaPendenciaPayFone.cs" />
+    <Compile Include="EventLayers\event_dlgCancelaPendenciaPayFone.cs" />
+    <Compile Include="EventLayers\event_dlgVerificaPendenciaPayFone.cs" />
+    <Compile Include="EventLayers\event_dlgAutorizaVendaPayFone.cs" />
+    <Compile Include="EventLayers\event_dlgPF_CadastroCliente.cs" />
+    <Compile Include="EventLayers\event_dlgPF_CadastroLojista.cs" />
+    <Compile Include="EventLayers\event_dlgAlterarSenhaCartao.cs" />
+    <Compile Include="EventLayers\event_dlgVendaEmpresarial.cs" />
+    <Compile Include="EventLayers\event_dlgSelecionaTerminal.cs" />
+    <Compile Include="EventLayers\event_dlgVendaEmpresarialCancelamento.cs" />
+    <Compile Include="EventLayers\event_dlgCancelaVendaPayFone.cs" />
+    <Compile Include="EventLayers\event_dlgRelatorios.cs" />
+    <Compile Include="EventLayers\event_dlgAgendamento.cs" />
+    <Compile Include="EventLayers\event_dlgCadastroAtividade.cs" />
+    <Compile Include="EventLayers\event_dlgFechamento.cs" />
+    <Compile Include="EventLayers\event_dlgEducacional.cs" />
+    <Compile Include="EventLayers\event_dlgBloqueio.cs" />
+    <Compile Include="EventLayers\event_dlgDesbloqueio.cs" />
+    <Compile Include="EventLayers\event_dlgHabilitarCartao.cs" />
+    <Compile Include="EventLayers\event_dlgExpedicao.cs" />
+    <Compile Include="EventLayers\event_dlgConfCartao.cs" />
+    <Compile Include="EventLayers\event_dlgEduCancelarCartao.cs" />
+    <Compile Include="EventLayers\event_dlgEduSegundaVia.cs" />
+    <Compile Include="EventLayers\event_dlgAdminEmpresas.cs" />
+    <Compile Include="EventLayers\event_dlgFaturamento.cs" />
+    <Compile Include="EventLayers\event_dlgFatExtra.cs" />
+    <Compile Include="EventLayers\event_dlgCancelaDespesa.cs" />
+    <Compile Include="EventLayers\event_dlgSegundaVia.cs" />
+    <Compile Include="EventLayers\event_dlgFatGerarArquivo.cs" />
+    <Compile Include="EventLayers\event_dlgRecebeArqBanco.cs" />
+    <Compile Include="EventLayers\event_dlgFatRel.cs" />
+    <Compile Include="EventLayers\event_dlgDadosCadastrais.cs" />
+    <Compile Include="EventLayers\event_dlgNovoChamado.cs" />
+    <Compile Include="EventLayers\event_dlgPesquisaChamado.cs" />
+    <Compile Include="EventLayers\event_dlgEditaChamado.cs" />
+    <Compile Include="EventLayers\event_dlgCustoChamado.cs" />
+    <Compile Include="EventLayers\event_dlgExtrasGift.cs" />
+    <Compile Include="EventLayers\event_dlgConfGiftCard.cs" />
+    <Compile Include="EventLayers\event_dlgQuiosque.cs" />
+    <Compile Include="EventLayers\event_dlgFinalGift.cs" />
+    <Compile Include="EventLayers\event_dlgRecargaGift.cs" />
+    <Compile Include="EventLayers\event_dlgConsultaGift.cs" />
+    <Compile Include="EventLayers\event_dlgCompensaCheque.cs" />
+    <Compile Include="EventLayers\event_dlgConfirmarRepasse.cs" />
+    <Compile Include="EventLayers\event_dlgConfFinalRepasse.cs" />
+    <Compile Include="EventLayers\event_dlgUpdate.cs" />
+    <Compile Include="EventLayers\event_dlgNovoDependente.cs" />
+    <Compile Include="EventLayers\event_dlgResPend.cs" />
+    <Compile Include="EventLayers\event_dlgFatRecManual.cs" />
+    <Compile Include="EventLayers\event_dlgLojista.cs" />
+    <Compile Include="EventLayers\event_dlgVendaLojista.cs" />
+    <Compile Include="EventLayers\event_dlgVendaParcelada.cs" />
+    <Compile Include="EventLayers\event_dlgPrevLojista.cs" />
+    <Compile Include="EventLayers\event_dlgObservacao.cs" />
+    <Compile Include="EventLayers\event_dlgReimpGift.cs" />
+    <Compile Include="EventLayers\event_dlgDBF_Fechamento.cs" />
+    <Compile Include="EventLayers\event_dlgGraficosEmp.cs" />
+    <Compile Include="EventLayers\event_dlgRemessa.cs" />
+    <Compile Include="EventLayers\event_dlgMensagensEdu.cs" />
+    <Compile Include="EventLayers\event_dlgCotaExtra.cs" />
+    <Compile Include="Infra\InstallData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovoCartao.resx">
+      <DependentUpon>dlgNovoCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgLogin.resx">
+      <DependentUpon>dlgLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgPassword.resx">
+      <DependentUpon>dlgPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCadastroUsuario.resx">
+      <DependentUpon>dlgCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovaEmpresa.resx">
+      <DependentUpon>dlgNovaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovaLoja.resx">
+      <DependentUpon>dlgNovaLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgManutencaoUsuario.resx">
+      <DependentUpon>dlgManutencaoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovoTerminal.resx">
+      <DependentUpon>dlgNovoTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgSelecionaEmpresa.resx">
+      <DependentUpon>dlgSelecionaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgManutencaoTerminal.resx">
+      <DependentUpon>dlgManutencaoTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConvenios.resx">
+      <DependentUpon>dlgConvenios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaLoja.resx">
+      <DependentUpon>dlgConsultaLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaEmpresa.resx">
+      <DependentUpon>dlgConsultaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaAuditoria.resx">
+      <DependentUpon>dlgConsultaAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgLocalizacao.resx">
+      <DependentUpon>dlgLocalizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgLimiteCartao.resx">
+      <DependentUpon>dlgLimiteCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaCartao.resx">
+      <DependentUpon>dlgConsultaCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaTransacoes.resx">
+      <DependentUpon>dlgConsultaTransacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgGravaPendenciaPayFone.resx">
+      <DependentUpon>dlgGravaPendenciaPayFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCancelaPendenciaPayFone.resx">
+      <DependentUpon>dlgCancelaPendenciaPayFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgVerificaPendenciaPayFone.resx">
+      <DependentUpon>dlgVerificaPendenciaPayFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgAutorizaVendaPayFone.resx">
+      <DependentUpon>dlgAutorizaVendaPayFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgPF_CadastroCliente.resx">
+      <DependentUpon>dlgPF_CadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgPF_CadastroLojista.resx">
+      <DependentUpon>dlgPF_CadastroLojista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgAlterarSenhaCartao.resx">
+      <DependentUpon>dlgAlterarSenhaCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgVendaEmpresarial.resx">
+      <DependentUpon>dlgVendaEmpresarial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgSelecionaTerminal.resx">
+      <DependentUpon>dlgSelecionaTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgVendaEmpresarialCancelamento.resx">
+      <DependentUpon>dlgVendaEmpresarialCancelamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCancelaVendaPayFone.resx">
+      <DependentUpon>dlgCancelaVendaPayFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgRelatorios.resx">
+      <DependentUpon>dlgRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgAgendamento.resx">
+      <DependentUpon>dlgAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCadastroAtividade.resx">
+      <DependentUpon>dlgCadastroAtividade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFechamento.resx">
+      <DependentUpon>dlgFechamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgEducacional.resx">
+      <DependentUpon>dlgEducacional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgBloqueio.resx">
+      <DependentUpon>dlgBloqueio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgDesbloqueio.resx">
+      <DependentUpon>dlgDesbloqueio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgHabilitarCartao.resx">
+      <DependentUpon>dlgHabilitarCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgExpedicao.resx">
+      <DependentUpon>dlgExpedicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConfCartao.resx">
+      <DependentUpon>dlgConfCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgEduCancelarCartao.resx">
+      <DependentUpon>dlgEduCancelarCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgEduSegundaVia.resx">
+      <DependentUpon>dlgEduSegundaVia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgAdminEmpresas.resx">
+      <DependentUpon>dlgAdminEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFaturamento.resx">
+      <DependentUpon>dlgFaturamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFatExtra.resx">
+      <DependentUpon>dlgFatExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCancelaDespesa.resx">
+      <DependentUpon>dlgCancelaDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgSegundaVia.resx">
+      <DependentUpon>dlgSegundaVia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFatGerarArquivo.resx">
+      <DependentUpon>dlgFatGerarArquivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgRecebeArqBanco.resx">
+      <DependentUpon>dlgRecebeArqBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFatRel.resx">
+      <DependentUpon>dlgFatRel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgDadosCadastrais.resx">
+      <DependentUpon>dlgDadosCadastrais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovoChamado.resx">
+      <DependentUpon>dlgNovoChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgPesquisaChamado.resx">
+      <DependentUpon>dlgPesquisaChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgEditaChamado.resx">
+      <DependentUpon>dlgEditaChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCustoChamado.resx">
+      <DependentUpon>dlgCustoChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgExtrasGift.resx">
+      <DependentUpon>dlgExtrasGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConfGiftCard.resx">
+      <DependentUpon>dlgConfGiftCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgQuiosque.resx">
+      <DependentUpon>dlgQuiosque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFinalGift.resx">
+      <DependentUpon>dlgFinalGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgRecargaGift.resx">
+      <DependentUpon>dlgRecargaGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConsultaGift.resx">
+      <DependentUpon>dlgConsultaGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCompensaCheque.resx">
+      <DependentUpon>dlgCompensaCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConfirmarRepasse.resx">
+      <DependentUpon>dlgConfirmarRepasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgConfFinalRepasse.resx">
+      <DependentUpon>dlgConfFinalRepasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgUpdate.resx">
+      <DependentUpon>dlgUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgNovoDependente.resx">
+      <DependentUpon>dlgNovoDependente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgResPend.resx">
+      <DependentUpon>dlgResPend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgFatRecManual.resx">
+      <DependentUpon>dlgFatRecManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgLojista.resx">
+      <DependentUpon>dlgLojista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgVendaLojista.resx">
+      <DependentUpon>dlgVendaLojista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgVendaParcelada.resx">
+      <DependentUpon>dlgVendaParcelada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgPrevLojista.resx">
+      <DependentUpon>dlgPrevLojista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgObservacao.resx">
+      <DependentUpon>dlgObservacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgReimpGift.resx">
+      <DependentUpon>dlgReimpGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgDBF_Fechamento.resx">
+      <DependentUpon>dlgDBF_Fechamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgGraficosEmp.resx">
+      <DependentUpon>dlgGraficosEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgRemessa.resx">
+      <DependentUpon>dlgRemessa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgMensagensEdu.resx">
+      <DependentUpon>dlgMensagensEdu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgCotaExtra.resx">
+      <DependentUpon>dlgCotaExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Infra\Enumerations.cs" />
+    <Compile Include="Infra\Signatures.cs" />
+    <Compile Include="Infra\Exchange.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

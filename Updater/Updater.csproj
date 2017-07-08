@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Updater</RootNamespace>
+    <AssemblyName>Updater</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D53E292-B961-491D-9816-515CF8BC1801}</ProjectGuid>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <StartWorkingDirectory>..\..\..\..\..\..\..\ConveyNet Client\</StartWorkingDirectory>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UpdateEngine">
+      <HintPath>UpdateEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container\DadosCartao.cs" />
+    <Compile Include="Container\CNetHeader.cs" />
+    <Compile Include="Container\DadosProprietario.cs" />
+    <Compile Include="Container\DadosAdicionais.cs" />
+    <Compile Include="Container\DadosUsuario.cs" />
+    <Compile Include="Container\DadosEmpresa.cs" />
+    <Compile Include="Container\DadosLoja.cs" />
+    <Compile Include="Container\DadosTerminal.cs" />
+    <Compile Include="Container\DadosConsultaLoja.cs" />
+    <Compile Include="Container\DadosConsultaEmpresa.cs" />
+    <Compile Include="Container\DadosConsultaAuditoria.cs" />
+    <Compile Include="Container\DadosAuditoria.cs" />
+    <Compile Include="Container\DadosConsultaCartoes.cs" />
+    <Compile Include="Container\POS_Resposta.cs" />
+    <Compile Include="Container\POS_Entrada.cs" />
+    <Compile Include="Container\DadosConsultaTransacao.cs" />
+    <Compile Include="Container\PF_DadosConsultaAutorizacao.cs" />
+    <Compile Include="Container\DadosNSU.cs" />
+    <Compile Include="Container\Rel_RTC.cs" />
+    <Compile Include="Container\Rel_RLT.cs" />
+    <Compile Include="Container\DadosAgenda.cs" />
+    <Compile Include="Container\DadosFechamento.cs" />
+    <Compile Include="Container\DadosRepasse.cs" />
+    <Compile Include="Container\DadosCartaoEdu.cs" />
+    <Compile Include="Container\EduExtrato.cs" />
+    <Compile Include="Container\DadosExpedicao.cs" />
+    <Compile Include="Container\DadosMovEmpresaVirtual.cs" />
+    <Compile Include="Container\DadosRanking.cs" />
+    <Compile Include="Container\Rel_RLE.cs" />
+    <Compile Include="Container\DadosDespesas.cs" />
+    <Compile Include="Container\Rel_FAT.cs" />
+    <Compile Include="Container\Entidade.cs" />
+    <Compile Include="Container\Rel_FatCompleto.cs" />
+    <Compile Include="Container\DadosChamado.cs" />
+    <Compile Include="Container\DadosAlteracaoChamado.cs" />
+    <Compile Include="Container\DadosProdutoGift.cs" />
+    <Compile Include="Container\DadosQuiosque.cs" />
+    <Compile Include="Container\DadosConsultaGift.cs" />
+    <Compile Include="Container\DadosSumarioRepasse.cs" />
+    <Compile Include="Container\DadosPagtoRepasse.cs" />
+    <Compile Include="Container\DadosFechCaixa.cs" />
+    <Compile Include="Container\DadosContabilGift.cs" />
+    <Compile Include="Container\DadosSinteticoContGift.cs" />
+    <Compile Include="Container\DadosRepRecibo.cs" />
+    <Compile Include="Container\Rel_Tarifas.cs" />
+    <Compile Include="Container\DadosComprovGift.cs" />
+    <Compile Include="Container\DadosGraficoFinanceiro.cs" />
+    <Compile Include="Container\DadosConsultaGraficoTransLojas.cs" />
+    <Compile Include="Container\DadosEduMessage.cs" />
+    <Compile Include="Container\Rel_MovEscola.cs" />
+    <Compile Include="Container\Rel_MovRedeEscola.cs" />
+    <Compile Include="Custom\ApplicationUtil.cs" />
+    <Compile Include="Dialogs\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventLayers\event_MainForm.cs" />
+    <Compile Include="Infra\InstallData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Infra\Enumerations.cs" />
+    <Compile Include="Infra\Signatures.cs" />
+    <Compile Include="Infra\Exchange.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom" />
+    <Folder Include="Dialogs" />
+    <Folder Include="EventLayers" />
+    <Folder Include="Container" />
+    <Folder Include="Infra" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
