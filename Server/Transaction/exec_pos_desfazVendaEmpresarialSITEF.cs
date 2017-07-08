@@ -13,7 +13,7 @@ namespace SyCrafEngine
 		public POS_Entrada input_cont_pe = new POS_Entrada();
 		
 		public string output_st_msg = "";
-		
+		 
 		public POS_Resposta output_cont_pr = new POS_Resposta();
 		
 		/// USER [ var_decl ]
