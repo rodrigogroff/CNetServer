@@ -61,9 +61,6 @@ namespace Tester
             Msg += "040955"; // nsuOrigem
 
             exec_pos_vendaEmpresarialSITEF srv = new exec_pos_vendaEmpresarialSITEF();
-
-            srv.input_cont_pe = new VendaEmpresarial().GetPE(Msg);
-            srv.authenticate();
         }
     }
 }
