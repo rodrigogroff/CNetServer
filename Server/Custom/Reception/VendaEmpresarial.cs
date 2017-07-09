@@ -12,7 +12,7 @@ namespace SyCrafEngine
 			return new VendaEmpresarial();
 		}
 		
-		public override bool Run ( string client_msg, ref Transaction trans, ref bool IsTerm, ref string buffer_response )
+        public override bool Run ( string client_msg, ref Transaction trans, ref bool IsTerm, ref string buffer_response )
 		{
 			if (client_msg.Length < 71) 
 		    	return false;
@@ -32,8 +32,11 @@ namespace SyCrafEngine
 			pe.set_nu_parcelas 		( client_msg.Substring 	( 69,  2 ) );
 			pe.set_st_valores  		( client_msg.Substring 	( 71     ) );
 
-            if (client_msg.Length > 100)                
-                pe.set_st_terminalSITEF (client_msg.Substring(100)); // veio do sitef
+            if (client_msg.Length > 200)
+            {
+                pe.set_st_terminalSITEF(client_msg.Substring(200, 8)); // veio do sitef
+                pe.set_st_nsuOrigemSITEF(client_msg.Substring(208, 6)); // veio do sitef
+            }                
 
             // ajustado
             if (pe.get_st_terminal().StartsWith("1"))

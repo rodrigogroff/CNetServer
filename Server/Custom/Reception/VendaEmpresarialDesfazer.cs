@@ -24,10 +24,12 @@ namespace SyCrafEngine
 			
             if (pe.get_st_terminal().StartsWith("1"))
             {
+                pe.set_st_nsuOrigemSITEF(client_msg.Substring(200, 6));
+
                 exec_pos_desfazVendaEmpresarialSITEF tr = new exec_pos_desfazVendaEmpresarialSITEF(trans);
 
                 tr.input_cont_pe = pe;
-                tr.RunOnline();
+                tr.RunOnline(); 
                 buffer_response = util.Get_POS_Buffer(tr.output_cont_pr, tr.output_st_msg);
                 IsTerm = true;
                 return true;

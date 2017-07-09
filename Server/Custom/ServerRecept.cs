@@ -36,11 +36,11 @@ namespace SyCrafEngine
 			// Atribuir códigos para classes
 			
 			hsh_custom [ "CEBC" ] = new VendaEmpresarialBuscaCartao();
-			hsh_custom [ "CECE" ] = new VendaEmpresarial(); // muitos ajustes (ok)
+			hsh_custom [ "CECE" ] = new VendaEmpresarial();                 // muitos ajustes (ok)
             hsh_custom [ "CECG" ] = new VendaEmpresarialGift();
-			hsh_custom [ "CECC" ] = new VendaEmpresarialConfirmacao(); // não precisou de ajuste (ok)
-			hsh_custom [ "CECA" ] = new VendaEmpresarialCancelamento(); // pequeno ajuste (ok)
-			hsh_custom [ "CEDF" ] = new VendaEmpresarialDesfazer(); // muitos ajustes (a fazer)
+			hsh_custom [ "CECC" ] = new VendaEmpresarialConfirmacao();      // não precisou de ajuste (ok)
+			hsh_custom [ "CECA" ] = new VendaEmpresarialCancelamento();     // pequeno ajuste (ok)
+			hsh_custom [ "CEDF" ] = new VendaEmpresarialDesfazer();         // muitos ajustes (ok)
 			hsh_custom [ "DICE" ] = new VendaEmpresarialDigitado();
 			
 			hsh_custom [ "GFGG" ] = new PayFone_GraficoGerencial();

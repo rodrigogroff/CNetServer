@@ -30,8 +30,8 @@ namespace SyCrafEngine
             string	nsuRCB       = client_msg.Substring(41, 6);
             string  nsuBanco     = client_msg.Substring(47, 14);
 
-            if (client_msg.Length > 100)
-                pe.set_st_terminalSITEF(client_msg.Substring(100)); // veio do sitef
+            if (client_msg.Length > 200)
+                pe.set_st_terminalSITEF(client_msg.Substring(200)); // veio do sitef
 
             exec_pos_cancelaVendaEmpresarial tr = new exec_pos_cancelaVendaEmpresarial ( trans );
             

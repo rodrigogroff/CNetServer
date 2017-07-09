@@ -21,8 +21,9 @@ namespace SyCrafEngine
         public const string vr_valor = "vr_valor";
 		public const string nu_parcelas = "nu_parcelas";
 		public const string st_valores = "st_valores";
-		
-		public POS_Entrada() { }
+        public const string st_nsuOrigemSITEF = "st_nsuOrigemSITEF";
+
+        public POS_Entrada() { }
 		
 		public void Clear()
 		{
@@ -35,7 +36,8 @@ namespace SyCrafEngine
             set_vr_valor ( "" );
 			set_nu_parcelas ( "" );
 			set_st_valores ( "" );
-		}
+            set_st_nsuOrigemSITEF("");
+        }
 		
 		public POS_Entrada ( DataPortable port ) 
 		{
@@ -53,7 +55,8 @@ namespace SyCrafEngine
             set_vr_valor ( port.getValue ( vr_valor ) );
 			set_nu_parcelas ( port.getValue ( nu_parcelas ) );
 			set_st_valores ( port.getValue ( st_valores ) );
-		}
+            set_st_nsuOrigemSITEF(port.getValue(st_nsuOrigemSITEF));
+        }
 		
 		public string get_st_empresa () { return getValue ( st_empresa ); }
 		public string get_st_matricula () { return getValue ( st_matricula ); }
@@ -64,8 +67,9 @@ namespace SyCrafEngine
         public string get_vr_valor () { return getValue ( vr_valor ); }
 		public string get_nu_parcelas () { return getValue ( nu_parcelas ); }
 		public string get_st_valores () { return getValue ( st_valores ); }
-		
-		public void set_st_empresa ( string val ) { setValue ( st_empresa , val ); }
+        public string get_st_nsuOrigemSITEF() { return getValue(st_nsuOrigemSITEF); }
+
+        public void set_st_empresa ( string val ) { setValue ( st_empresa , val ); }
 		public void set_st_matricula ( string val ) { setValue ( st_matricula , val ); }
 		public void set_st_titularidade ( string val ) { setValue ( st_titularidade , val ); }
 		public void set_st_senha ( string val ) { setValue ( st_senha , val ); }
@@ -74,5 +78,6 @@ namespace SyCrafEngine
         public void set_vr_valor ( string val ) { setValue ( vr_valor , val ); }
 		public void set_nu_parcelas ( string val ) { setValue ( nu_parcelas , val ); }
 		public void set_st_valores ( string val ) { setValue ( st_valores , val ); }
-	}
+        public void set_st_nsuOrigemSITEF(string val) { setValue(st_nsuOrigemSITEF, val); }
+    }
 }

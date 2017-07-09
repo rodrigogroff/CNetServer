@@ -757,8 +757,29 @@ namespace SyCrafEngine
 			
 			return HasRows();
 		}
-			
-		public bool select_rows_dt_emp ( string val_dt_transacao, string val_dt_transacao1, string val_fk_empresa )
+
+        public bool select_rows_loj_vr(string val_fk_loja, string val_vr_total, string val_nu_nsuOrig)
+        {
+            do
+            {
+                StartSelect();
+                fieldSelection();
+
+                m_gen_dbStatement.AddWhere(TB_LOG_TRANSACOES.fk_loja, val_fk_loja, TB_LOG_TRANSACOES.type_fk_loja);
+                m_gen_dbStatement.AddWhere(TB_LOG_TRANSACOES.vr_total, val_vr_total, TB_LOG_TRANSACOES.type_vr_total);
+                m_gen_dbStatement.AddWhere(TB_LOG_TRANSACOES.nu_nsuOrig, val_nu_nsuOrig, TB_LOG_TRANSACOES.type_nu_nsuOrig);
+
+                m_gen_dbStatement.AddOrderBy(TB_LOG_TRANSACOES.dt_transacao);
+
+                if (!executeQuery())
+                    return false;
+            }
+            while (EndSelect() == false); // row lock
+
+            return HasRows();
+        }
+
+        public bool select_rows_dt_emp ( string val_dt_transacao, string val_dt_transacao1, string val_fk_empresa )
 		{
 			do
 			{

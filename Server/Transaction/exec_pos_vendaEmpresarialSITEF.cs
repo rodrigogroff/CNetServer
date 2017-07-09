@@ -131,12 +131,14 @@ namespace SyCrafEngine
 			
 			var_codResp   		= "0606";
 
+            // alterado
+
             #region - valida loja AO INVES DE TERMINAL (antigo) - 
 
             // ## Busca terminal pelo seu código
 
             // pega os 7 ultimos
-            if ( !loj.select_rows_loja ( input_cont_pe.get_st_terminal().Substring(1)) )
+            if ( !loj.select_rows_loja ( input_cont_pe.get_st_terminal().Substring(1).TrimStart('0') ))
             {
             	output_st_msg = "Loja inexistente";
             	var_codResp   = "0303";
@@ -692,7 +694,7 @@ namespace SyCrafEngine
 			l_tr.set_nu_nsu 			( var_nu_nsuAtual	 				);
 			l_tr.set_dt_transacao		( GetDataBaseTime()					);
 			l_tr.set_nu_cod_erro 		( output_cont_pr.get_st_codResp() 	);
-			l_tr.set_nu_nsuOrig			( var_nu_nsuOrig 					);
+			l_tr.set_nu_nsuOrig			( input_cont_pe.get_st_nsuOrigemSITEF());
 			l_tr.set_en_operacao		( var_operacaoCartao				);
 			l_tr.set_st_msg_transacao 	( "TERMINAL SITEF: "+ input_cont_pe.get_st_terminalSITEF() );
 			l_tr.set_fk_loja			( term.get_fk_loja()				);
@@ -719,10 +721,15 @@ namespace SyCrafEngine
 				l_tr.set_vr_saldo_disp		( vr_dispMes.ToString()	);
 				l_tr.set_vr_saldo_disp_tot	( vr_dispTot.ToString() 	);
 			}
-			
-			#endregion
-			
-			l_tr.create_LOG_Transacoes();		
+
+            #endregion
+
+            //alterado
+
+            output_cont_pr.set_st_variavel ( "Saldo disponível no mês: " + new money().setMoneyFormat(vr_dispMes) + " * " +
+                                             "Saldo disponível parcelado: " + new money().setMoneyFormat(vr_dispTot) );
+
+            l_tr.create_LOG_Transacoes();		
 			
 			#region - vincula parcelas com a transação - 
 					

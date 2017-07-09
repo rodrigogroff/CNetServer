@@ -19,8 +19,8 @@ namespace SyCrafEngine
 		/// USER [ var_decl ]
 		
 		LOG_Transacoes l_tr;
-		T_Terminal term;
-					
+        T_Terminal term;
+							
 		string var_codResp = "0";
 		
 		/// USER [ var_decl ] END
@@ -75,36 +75,40 @@ namespace SyCrafEngine
 		
 		public override bool authenticate ( ) 
 		{
-			Registry ("authenticate exec_pos_desfazVendaEmpresarialSITEF "); 
-		
-			/// USER [ authenticate ]
-			
-			// ## Buscar terminal
-			
-			term = new T_Terminal (this);
+			Registry ("authenticate exec_pos_desfazVendaEmpresarialSITEF ");
+
+            /// USER [ authenticate ]
+
+            // ## Buscar terminal
+
+            T_Loja loja = new T_Loja(this);
 		
 			var_codResp = "0606";
 			
-			if ( !term.select_rows_terminal ( input_cont_pe.get_st_terminal() ) )
+            //alterado
+			if ( !loja.select_rows_loja ( input_cont_pe.get_st_terminal().Substring(1).TrimStart('0') ) )
 			{
-				output_st_msg = "Erro aplicativo";
+				output_st_msg = "Erro aplicativo1";
 				return false;
 			}
 			
-			if ( !term.fetch() )
+			if ( !loja.fetch() )
 			{
-				output_st_msg = "Erro aplicativo";
+				output_st_msg = "Erro aplicativo2";
 				return false;
 			}
+
+            
+
+            // ## Buscar transação pelo terminal e pelo valor
+
+            l_tr = new LOG_Transacoes (this);
 			
-			// ## Buscar transação pelo terminal e pelo valor
-			
-			l_tr = new LOG_Transacoes (this);
-			
-			if ( !l_tr.select_rows_term_vr ( term.get_identity(),
-			                                 input_cont_pe.get_vr_valor() ) )
+			if ( !l_tr.select_rows_loj_vr (  loja.get_identity(),
+			                                 input_cont_pe.get_vr_valor(),
+                                             input_cont_pe.get_st_nsuOrigemSITEF()) )
 			{
-				output_st_msg = "Erro aplicativo";
+				output_st_msg = "Erro aplicativo3";
 				return false;
 			}
 			
@@ -112,7 +116,7 @@ namespace SyCrafEngine
 			
 			if ( !l_tr.fetch() )
 			{
-				output_st_msg = "Erro aplicativo";
+				output_st_msg = "Erro aplicativo4";
 				return false;
 			}
 			
@@ -129,11 +133,19 @@ namespace SyCrafEngine
 			
 			if ( l_tr.get_tg_confirmada() != TipoConfirmacao.Pendente )
 			{
-				output_st_msg = "Erro aplicativo";
+				output_st_msg = "Erro aplicativo5";
 				return false;
 			}
-			
-			var_codResp = "0000";
+
+            term = new T_Terminal(this);
+
+            if (!term.selectIdentity(l_tr.get_fk_terminal()))
+            {
+                output_st_msg = "Erro aplicativo6";
+                return false;
+            }
+            
+            var_codResp = "0000";
 								
 			/// USER [ authenticate ] END
 		

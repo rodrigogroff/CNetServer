@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Administrator\Source\Repos\CNETServer\Server\bin\Debug\ServerEngine.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAA78A33-6DD1-4FFF-928A-0FF21FEF2242}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ServerEngine</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.3507.20044</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>SyCrafEngine</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncryptionAlgorithm.cs" />
+    <Compile Include="BasicExchange.cs" />
+    <Compile Include="DB_Access.cs" />
+    <Compile Include="DB_Result.cs" />
+    <Compile Include="DB_Row.cs" />
+    <Compile Include="ENUM_DB_SQL_CMD.cs" />
+    <Compile Include="ENUM_SQL_UNIT.cs" />
+    <Compile Include="DB_Statement.cs" />
+    <Compile Include="CtrlStation.cs" />
+    <Compile Include="IServAppHandle.cs" />
+    <Compile Include="ConnData.cs" />
+    <Compile Include="Monitor.cs" />
+    <Compile Include="ConnectionMonitor.cs" />
+    <Compile Include="LoadData.cs" />
+    <Compile Include="LoadMonitor.cs" />
+    <Compile Include="Base_Timer.cs" />
+    <Compile Include="CPU_Timer.cs" />
+    <Compile Include="CpuData.cs" />
+    <Compile Include="CPU_Monitor.cs" />
+    <Compile Include="Encryptor.cs" />
+    <Compile Include="Decryptor.cs" />
+    <Compile Include="EncryptTransformer.cs" />
+    <Compile Include="DecryptTransformer.cs" />
+    <Compile Include="HexEncoding.cs" />
+    <Compile Include="SyCrafSecurity.cs" />
+    <Compile Include="money.cs" />
+    <Compile Include="TSpan_Range.cs" />
+    <Compile Include="TSpan_Mode.cs" />
+    <Compile Include="Generic.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="INFRA_FIELD.cs" />
+    <Compile Include="Synchronization.cs" />
+    <Compile Include="CustomRecept.cs" />
+    <Compile Include="ServerThread.cs" />
+    <Compile Include="ClusterMessages.cs" />
+    <Compile Include="ServerNode.cs" />
+    <Compile Include="ServerNewConnInfo.cs" />
+    <Compile Include="thread_Scheduler.cs" />
+    <Compile Include="MainServer.cs" />
+    <Compile Include="thread_Dispatcher.cs" />
+    <Compile Include="Dispatcher.cs" />
+    <Compile Include="DataServer.cs" />
+    <Compile Include="DataPortable.cs" />
+    <Compile Include="Communication.cs" />
+    <Compile Include="CommonSet.cs" />
+    <Compile Include="Translator.cs" />
+    <Compile Include="Infra_ApplicationUtil.cs" />
+    <Compile Include="LockArea.cs" />
+    <Compile Include="LockObject.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
