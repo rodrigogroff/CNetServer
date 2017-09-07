@@ -278,7 +278,7 @@ namespace SyCrafEngine
         // calculo codigo de acesso para cartoes convenio
         public string calculaCodigoAcesso( string empresa, string matricula, string titularidade, string via, string cpf) 
         {
-            string chave = matricula + empresa + "01" + via + cpf.PadRight(14,' ');
+            string chave = matricula + empresa + titularidade.PadLeft(2,'0') + via + cpf.PadRight(14,' ');
             int temp = 0;
             for (int n = 0; n < chave.Length; n++)
             {

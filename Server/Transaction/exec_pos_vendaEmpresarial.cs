@@ -215,8 +215,8 @@ namespace SyCrafEngine
             #region - valida cartão - 
             
             if ( !cart.select_rows_tudo ( input_cont_pe.get_st_empresa(),
-     									 input_cont_pe.get_st_matricula(),
-                                       	 input_cont_pe.get_st_titularidade() ) )
+     									  input_cont_pe.get_st_matricula(),
+                                       	  input_cont_pe.get_st_titularidade() ) )
             {
             	output_st_msg = "Cartão inexistente";
             	var_codResp   = "0606";
@@ -314,7 +314,7 @@ namespace SyCrafEngine
 					if ( vr_valor > vr_dispTot )
 					{
 		        		output_st_msg = "limite excedido";
-		        		var_codResp   = "2727" ;
+		        		var_codResp   = "2721" ;
 		        		
 		        		SQL_LOGGING_ENABLE = true;
 		        		
@@ -345,7 +345,7 @@ namespace SyCrafEngine
 						if ( valor_unit_parc > cart.get_int_vr_limiteMensal() )
 						{
 							output_st_msg = "limite excedido";
-		        			var_codResp   = "2727" ;
+		        			var_codResp   = "2722" ;
 		        			
 		        			SQL_LOGGING_ENABLE = true;
 		        			
@@ -373,7 +373,7 @@ namespace SyCrafEngine
 						if ( valor_unit_parc > dispMesParc )
 						{
 		    	    		output_st_msg = "limite excedido";
-		        			var_codResp   = "2727" ;
+		        			var_codResp   = "2723" ;
 		        			
 		        			SQL_LOGGING_ENABLE = true;
 		        			
@@ -386,7 +386,7 @@ namespace SyCrafEngine
 					if ( vr_valor > vr_dispMes || vr_valor > vr_dispTot )
 					{
 		        		output_st_msg = "limite excedido";
-		        		var_codResp   = "2727" ;
+		        		var_codResp   = "2724" ;
 		        		
 		        		SQL_LOGGING_ENABLE = true;
 		        		
@@ -399,7 +399,7 @@ namespace SyCrafEngine
 				if ( vr_valor > cart.get_int_vr_limiteTotal() )
 				{
 	        		output_st_msg = "limite excedido";
-	        		var_codResp   = "2727" ;
+	        		var_codResp   = "2725" ;
 	        		
 	        		SQL_LOGGING_ENABLE = true;
 	        		
